@@ -1,0 +1,44 @@
+{
+  "star_types": [
+    {
+      "name": "주계열성O",
+      "description": "O형 주계열성: 가장 뜨겁고 밝은 별"
+    },
+    {
+      "name": "주계열성B",
+      "description": "B형 주계열성: 매우 뜨겁고 밝은 청백색 별"
+    },
+    {
+      "name": "주계열성A",
+      "description": "A형 주계열성: 백색 별"
+    },
+    {
+      "name": "주계열성F",
+      "description": "F형 주계열성: 황백색 별"
+    },
+    {
+      "name": "주계열성G",
+      "description": "G형 주계열성: 황색 별 (태양형)"
+    },
+    {
+      "name": "주계열성K",
+      "description": "K형 주계열성: 주황색 별"
+    },
+    {
+      "name": "주계열성M",
+      "description": "M형 주계열성: 적색 별"
+    },
+    {
+      "name": "백색왜성",
+      "description": "진화 말기의 작고 고밀도 별"
+    },
+    {
+      "name": "중성자별",
+      "description": "초신성 폭발 후 남은 초고밀도 별"
+    },
+    {
+      "name": "블랙홀",
+      "description": "중력이 너무 강해 빛조차 빠져나올 수 없는 천체"
+    }
+  ]
+} 
