@@ -1,5 +1,5 @@
 import time
-import star
+import object.star as star
 from GameState import state
 
 def run_every_second():

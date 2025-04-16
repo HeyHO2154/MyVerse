@@ -1,0 +1,45 @@
+[
+    {
+      "category": "주계열성",
+      "id": "STAR_MAIN_SEQUENCE",
+      "subtypes": ["O", "B", "A", "F", "G", "K", "M"],
+      "resources": [],
+      "color_map": {
+        "O": "#9db4ff",
+        "B": "#aabfff",
+        "A": "#cad7ff",
+        "F": "#f8f7ff",
+        "G": "#fff4e8",
+        "K": "#ffd2a1",
+        "M": "#ffcc6f"
+      }
+    },
+    {
+      "category": "백색왜성",
+      "id": "STAR_WHITE_DWARF",
+      "subtypes": [],
+      "resources": [
+        { "item": "ITEM_CRYSTAL", "amount": 100 }
+      ],
+      "color_hex": "#ffffff"
+    },
+    {
+      "category": "중성자별",
+      "id": "STAR_NEUTRON",
+      "subtypes": [],
+      "resources": [
+        { "item": "ITEM_ZERO", "amount": 100 }
+      ],
+      "color_hex": "#ccccff"
+    },
+    {
+      "category": "블랙홀",
+      "id": "STAR_BLACK_HOLE",
+      "subtypes": [],
+      "resources": [
+        { "item": "ITEM_DARK_MATTER", "amount": 100 }
+      ],
+      "color_hex": "#000000"
+    }
+  ]
+  

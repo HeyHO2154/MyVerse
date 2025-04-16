@@ -22,12 +22,33 @@ class Star:
             self.connected_star_ids = connected_star_ids
         self.update_time = state.time
 
-def generate_star():
-    if random.random() < 0.1:
-        star = Star(name="항성A", star_type="주계열성A")
-        print("🌟 항성 생성됨:", star.id)
 
-        filepath = os.path.join(os.path.dirname(__file__), "InGame", "stars.json")
+def load_star_names():
+    filepath = os.path.join(os.path.dirname(__file__), "..", "data", "star_names.txt")
+    with open(filepath, "r", encoding="utf-8") as f:
+        return [line.strip() for line in f if line.strip()]
+    
+STAR_NAMES = load_star_names()  # 이건 파일 처음에 한 번만 실행하면 됨
+
+def load_star_types():
+    filepath = os.path.join(os.path.dirname(__file__), "..", "data", "star_types.json")
+    with open(filepath, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+STAR_TYPES = load_star_types()  # 초기에 한 번만 불러옴
+
+
+def generate_star():
+    if random.random() < 0.5:
+        # 주계열성 타입 선택
+        main_sequence = next(t for t in STAR_TYPES if t["id"] == "STAR_MAIN_SEQUENCE")
+        subtype = random.choice(main_sequence["subtypes"])  # O, B, A, F, G, K, M 중 하나
+        full_type = f'{main_sequence["category"]} {subtype}'  # 예: "주계열성 G"
+
+        star = Star(name=random.choice(STAR_NAMES), star_type=full_type)
+        print("🌟 항성 생성됨:", star.name, f"({full_type})")
+
+        filepath = os.path.join(os.path.dirname(__file__), "..", "InGame", "stars.json")
         if os.path.exists(filepath):
             with open(filepath, "r", encoding="utf-8") as f:
                 data = json.load(f)

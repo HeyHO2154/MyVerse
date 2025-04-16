@@ -1,10 +1,58 @@
 [
   {
-    "id": "3329fa09-35c2-4e6f-805d-d1ded598716a",
-    "name": "항성A",
-    "type": "주계열성A",
-    "create_time": 44,
-    "update_time": 44,
+    "id": "42fba9dd-0893-4ad6-8f00-8cd3f358be7b",
+    "name": "셰라탄",
+    "type": "주계열성 A",
+    "create_time": 7,
+    "update_time": 7,
+    "connected_star_ids": []
+  },
+  {
+    "id": "2604af18-762b-42d2-9b56-51099a80f474",
+    "name": "프로키온",
+    "type": "주계열성 K",
+    "create_time": 8,
+    "update_time": 8,
+    "connected_star_ids": []
+  },
+  {
+    "id": "48da42a1-4b74-4eca-a49d-ecf0511e4575",
+    "name": "알니타크",
+    "type": "주계열성 A",
+    "create_time": 9,
+    "update_time": 9,
+    "connected_star_ids": []
+  },
+  {
+    "id": "8f41142a-f4b7-42ac-be6d-e39813914e7d",
+    "name": "베타 크루시스",
+    "type": "주계열성 G",
+    "create_time": 10,
+    "update_time": 10,
+    "connected_star_ids": []
+  },
+  {
+    "id": "d8e0b415-2d26-4cba-8460-26113cd7326c",
+    "name": "타이탄",
+    "type": "주계열성 B",
+    "create_time": 12,
+    "update_time": 12,
+    "connected_star_ids": []
+  },
+  {
+    "id": "9ee10cf6-6529-49ec-affb-17e93b69276b",
+    "name": "아크투루스",
+    "type": "주계열성 B",
+    "create_time": 13,
+    "update_time": 13,
+    "connected_star_ids": []
+  },
+  {
+    "id": "cfb1e3b3-eb78-4756-921f-568c74a812bd",
+    "name": "HD 209458",
+    "type": "주계열성 G",
+    "create_time": 14,
+    "update_time": 14,
     "connected_star_ids": []
   }
 ]
