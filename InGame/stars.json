@@ -1,58 +1,52 @@
 [
   {
-    "id": "42fba9dd-0893-4ad6-8f00-8cd3f358be7b",
-    "name": "셰라탄",
-    "type": "주계열성 A",
+    "id": "2cf31720-c2dd-43a2-8a98-2c7883b019b9",
+    "name": "벨라트릭스",
+    "type_category": "주계열성",
+    "subtype": "M",
+    "color": "#ffcc6f",
+    "create_time": 1,
+    "update_time": 1,
+    "connected_star_ids": []
+  },
+  {
+    "id": "515aabe4-69ef-4791-8a38-a57b9d4923c2",
+    "name": "알데라민",
+    "type_category": "주계열성",
+    "subtype": "M",
+    "color": "#ffcc6f",
+    "create_time": 4,
+    "update_time": 4,
+    "connected_star_ids": []
+  },
+  {
+    "id": "a2e9c12b-b818-4091-84ae-5a07bbffbb96",
+    "name": "벨라 6",
+    "type_category": "주계열성",
+    "subtype": "M",
+    "color": "#ffcc6f",
+    "create_time": 5,
+    "update_time": 5,
+    "connected_star_ids": []
+  },
+  {
+    "id": "38f7c58d-1735-4660-959b-0f6c1f935a41",
+    "name": "알니타크",
+    "type_category": "주계열성",
+    "subtype": "F",
+    "color": "#f8f7ff",
+    "create_time": 6,
+    "update_time": 6,
+    "connected_star_ids": []
+  },
+  {
+    "id": "1e916779-5184-4d34-931d-4763374d14f4",
+    "name": "미노라",
+    "type_category": "주계열성",
+    "subtype": "B",
+    "color": "#aabfff",
     "create_time": 7,
     "update_time": 7,
-    "connected_star_ids": []
-  },
-  {
-    "id": "2604af18-762b-42d2-9b56-51099a80f474",
-    "name": "프로키온",
-    "type": "주계열성 K",
-    "create_time": 8,
-    "update_time": 8,
-    "connected_star_ids": []
-  },
-  {
-    "id": "48da42a1-4b74-4eca-a49d-ecf0511e4575",
-    "name": "알니타크",
-    "type": "주계열성 A",
-    "create_time": 9,
-    "update_time": 9,
-    "connected_star_ids": []
-  },
-  {
-    "id": "8f41142a-f4b7-42ac-be6d-e39813914e7d",
-    "name": "베타 크루시스",
-    "type": "주계열성 G",
-    "create_time": 10,
-    "update_time": 10,
-    "connected_star_ids": []
-  },
-  {
-    "id": "d8e0b415-2d26-4cba-8460-26113cd7326c",
-    "name": "타이탄",
-    "type": "주계열성 B",
-    "create_time": 12,
-    "update_time": 12,
-    "connected_star_ids": []
-  },
-  {
-    "id": "9ee10cf6-6529-49ec-affb-17e93b69276b",
-    "name": "아크투루스",
-    "type": "주계열성 B",
-    "create_time": 13,
-    "update_time": 13,
-    "connected_star_ids": []
-  },
-  {
-    "id": "cfb1e3b3-eb78-4756-921f-568c74a812bd",
-    "name": "HD 209458",
-    "type": "주계열성 G",
-    "create_time": 14,
-    "update_time": 14,
     "connected_star_ids": []
   }
 ]
