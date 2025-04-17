@@ -38,12 +38,12 @@ def determine_main_sequence_type(size):
 
 def generate_star():
     stars = load_json(os.path.join(os.path.dirname(__file__), "..", "InGame", "stars.json"))
-    if random.random() < math.exp(-len(stars) / 20):
+    if random.random() < math.exp(-len(stars) / 20): #지수함수, 항성 수가 많을 수록 생성 확률 감소(최대치 약 100개)
         id = str(uuid.uuid4())
         name = random.choice(STAR_NAMES)
         galaxy = random.choice(GALXAY_NAMES)
 
-        #N중성계
+        #N중성계(약 1~3개, 낮은 확률로 4+)
         types = []
         sizes = []
         colors = []
@@ -61,20 +61,23 @@ def generate_star():
             if len(types) >= 1 and random.random() > 0.3:
                 break
 
-        #항성계 연결
+        #항성계 연결(약 1~3개, 낮은 확률로 4+)
         linked_stars = []
         if stars:
-            target = random.choice(stars)
-            if len(target.get("linked_stars", [])) < 4:
+            target = random.choice(stars)        
+            candidate = target["linked_stars"].copy()
+            candidate.append(target["id"])
+            while candidate:
+                if random.random() > 0.3:
+                    break
+
                 galaxy = target["galaxy"]
-                if len(target.get("linked_stars", [])) > 0:
-                    target2_id = random.choice(target["linked_stars"])
-                    target2 = next((s for s in stars if s["id"] == target2_id), None)
-                    if len(target2.get("linked_stars", [])) < 4:
-                        linked_stars.append(target2["id"])
-                        target2["linked_stars"].append(id)
-                linked_stars.append(target["id"])
-                target["linked_stars"].append(id)
+                target2_id = random.choice(candidate)
+                target2 = next((s for s in stars if s["id"] == target2_id), None)
+                linked_stars.append(target2["id"])
+                target2["linked_stars"].append(id)
+                candidate.remove(target2_id)
+        
 
         star = Star(id=id, name=name, size=sizes, type=types, color=colors, linked_stars=linked_stars, galaxy=galaxy)
         stars.append(star)
