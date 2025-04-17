@@ -1,0 +1,32 @@
+[
+  {
+    "id": "4d585db5-4410-4012-b683-50b7897be830",
+    "name": "사달수드",
+    "type": "STAR_MAIN_SEQUENCE_G",
+    "resources": [],
+    "color": "#fff4e8",
+    "create_time": 2,
+    "update_time": 2,
+    "linked_stars": []
+  },
+  {
+    "id": "99b6c18f-ec6c-452c-8387-57266656bb84",
+    "name": "게이넌",
+    "type": "STAR_MAIN_SEQUENCE_F",
+    "resources": [],
+    "color": "#f8f7ff",
+    "create_time": 3,
+    "update_time": 3,
+    "linked_stars": []
+  },
+  {
+    "id": "ae2fd993-fe12-499f-b86a-7f4820b6f89f",
+    "name": "카펠라",
+    "type": "STAR_MAIN_SEQUENCE_B",
+    "resources": [],
+    "color": "#aabfff",
+    "create_time": 7,
+    "update_time": 7,
+    "linked_stars": []
+  }
+]

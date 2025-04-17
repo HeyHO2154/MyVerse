@@ -4,9 +4,11 @@ from GameState import state
 
 def run_every_second():
     while True:
-        state.tick()
-        star.generate_star()
         time.sleep(1)
+        state.tick()
+
+        star.generate_star()
+        
 
 if __name__ == "__main__":
     run_every_second()

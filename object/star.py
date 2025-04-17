@@ -5,57 +5,58 @@ import uuid
 from GameState import state
 
 class Star:
-    def __init__(self, name, type_category, subtype=None, color=None, connected_star_ids=None):
+    def __init__(self, name, type, resources=None, color=None, linked_stars=None):
         self.id = str(uuid.uuid4())
         self.name = name
-        self.type_category = type_category  # "주계열성"
-        self.subtype = subtype              # "G"
-        self.color = color                  # "#fff4e8"
+        self.type = type        
+        self.resources = resources or []
+        self.color = color                 
         self.create_time = state.time
         self.update_time = state.time
-        self.connected_star_ids = connected_star_ids or []
-
-    def update(self, name=None, type_category=None, subtype=None, connected_star_ids=None):
-        if name:
-            self.name = name
-        if type_category:
-            self.type_category = type_category
-        if subtype:
-            self.subtype = subtype
-        if connected_star_ids is not None:
-            self.connected_star_ids = connected_star_ids
-        self.update_time = state.time
+        self.linked_stars = linked_stars or []
 
 def load_star_names():
     filepath = os.path.join(os.path.dirname(__file__), "..", "data", "star_names.txt")
     with open(filepath, "r", encoding="utf-8") as f:
         return [line.strip() for line in f if line.strip()]
-    
-STAR_NAMES = load_star_names()  # 이건 파일 처음에 한 번만 실행하면 됨
-
 def load_star_types():
     filepath = os.path.join(os.path.dirname(__file__), "..", "data", "star_types.json")
     with open(filepath, "r", encoding="utf-8") as f:
         return json.load(f)
+    
+STAR_NAMES = load_star_names()
+STAR_TYPES = load_star_types()
 
-STAR_TYPES = load_star_types()  # 초기에 한 번만 불러옴
-
+def determine_main_sequence_type(size):
+    thresholds = [
+        (95, "STAR_MAIN_SEQUENCE_O"),
+        (85, "STAR_MAIN_SEQUENCE_B"),
+        (70, "STAR_MAIN_SEQUENCE_A"),
+        (60, "STAR_MAIN_SEQUENCE_F"),
+        (55, "STAR_MAIN_SEQUENCE_G"),
+        (52, "STAR_MAIN_SEQUENCE_K")
+    ]
+    for threshold, type_id in thresholds:
+        if size >= threshold:
+            return type_id
+    return "STAR_MAIN_SEQUENCE_M"
 
 def generate_star():
     if random.random() < 0.5:
-        main_sequence = next(t for t in STAR_TYPES if t["id"] == "STAR_MAIN_SEQUENCE")
-        subtype = random.choice(main_sequence["subtypes"])  # O ~ M
-        color = main_sequence["color_map"][subtype]
         name = random.choice(STAR_NAMES)
+        size = random.uniform(50, 100)
+
+        type_id = determine_main_sequence_type(size)
+        type_info = next(t for t in STAR_TYPES if t["id"] == type_id)
+        color = type_info["color_hex"]
 
         star = Star(
             name=name,
-            type_category=main_sequence["category"],  # "주계열성"
-            subtype=subtype,                          # "G"
-            color=color                                # "#fff4e8"
+            type=type_id,
+            color=color
         )
 
-        print(f"🌟 항성 생성됨: {star.name} ({star.type_category} {star.subtype})")
+        print(f"🌟 항성 생성됨: {star.name} ({type_info['category']}, size={round(size, 1)})")
 
         filepath = os.path.join(os.path.dirname(__file__), "..", "InGame", "stars.json")
         if os.path.exists(filepath):
