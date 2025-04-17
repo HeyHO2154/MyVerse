@@ -48,7 +48,8 @@ fetch("stars.json")
     const nodes = data.map(star => ({
       id: star.id,
       name: star.name,
-      color: star.color
+      color: star.color,
+      size: star.size
     }));
 
     const linksSet = new Set();
@@ -104,7 +105,7 @@ fetch("stars.json")
         .on("end", dragended));
 
     node.append("circle")
-      .attr("r", 8)
+      .attr("r", d => d.size/10)
       .attr("fill", d => d.color);
 
     node.append("text")
