@@ -1,3 +1,7 @@
+<!-- force-directed layout
+python -m http.server 8000
+http://localhost:8000/debug.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +13,7 @@
       margin: 0;
       background: #111;
       color: #fff;
+      overflow: hidden;  /* ← 이 줄 추가 */
     }
     svg {
       width: 100vw;
@@ -20,9 +25,11 @@
       stroke-width: 1.5px;
     }
     .node text {
-      fill: white;
-      font-size: 10px;
-      pointer-events: none;
+        fill: white;
+        font-size: 10px;
+        pointer-events: none;
+        stroke: none;
+        paint-order: normal;
     }
     .link {
       stroke: #888;
