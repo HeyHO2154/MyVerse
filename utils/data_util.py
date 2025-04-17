@@ -10,10 +10,8 @@ def load_json(filepath):
                 pass
     return []
 
-def save_json(obj, filepath):
-    data = load_json(filepath)
-    data.append(obj.__dict__ if hasattr(obj, "__dict__") else obj)
-
+def save_json(obj_list, filepath):
+    data = [o.__dict__ if hasattr(o, "__dict__") else o for o in obj_list]
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 

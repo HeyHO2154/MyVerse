@@ -1,12 +1,114 @@
 [
   {
-    "id": "c2b541ea-f4f8-40e8-aa69-d663609a3cce",
-    "name": "카이란",
+    "id": "9cc6532e-65ce-42a9-b748-df217e7280d1",
+    "name": "타이탄",
+    "type": "STAR_MAIN_SEQUENCE_F",
+    "resources": [],
+    "color": "#f8f7ff",
+    "create_time": 2,
+    "update_time": 2,
+    "linked_stars": [
+      "9678eb1d-345c-4834-ace5-dd37a2ee32ad",
+      "d54c6465-5870-4b7e-a445-66561509a4a2"
+    ]
+  },
+  {
+    "id": "9678eb1d-345c-4834-ace5-dd37a2ee32ad",
+    "name": "알카이드",
+    "type": "STAR_MAIN_SEQUENCE_K",
+    "resources": [],
+    "color": "#ffd2a1",
+    "create_time": 6,
+    "update_time": 6,
+    "linked_stars": [
+      "9cc6532e-65ce-42a9-b748-df217e7280d1",
+      "b24aa23d-45b0-4987-aff2-00e8d49d2e6c",
+      "21b1304d-a1d0-4e56-bea2-c459e9344e26"
+    ]
+  },
+  {
+    "id": "b24aa23d-45b0-4987-aff2-00e8d49d2e6c",
+    "name": "알코르",
     "type": "STAR_MAIN_SEQUENCE_A",
     "resources": [],
     "color": "#cad7ff",
-    "create_time": 3,
-    "update_time": 3,
+    "create_time": 8,
+    "update_time": 8,
+    "linked_stars": [
+      "9678eb1d-345c-4834-ace5-dd37a2ee32ad",
+      "d2e139be-c174-4134-a8e8-204a493f42bd",
+      "08424194-469e-4e82-8353-508e89a7434e",
+      "e7849d85-b03b-4747-84be-96274eab103e"
+    ]
+  },
+  {
+    "id": "d2e139be-c174-4134-a8e8-204a493f42bd",
+    "name": "벨라트릭스",
+    "type": "STAR_MAIN_SEQUENCE_F",
+    "resources": [],
+    "color": "#f8f7ff",
+    "create_time": 10,
+    "update_time": 10,
+    "linked_stars": [
+      "b24aa23d-45b0-4987-aff2-00e8d49d2e6c"
+    ]
+  },
+  {
+    "id": "21b1304d-a1d0-4e56-bea2-c459e9344e26",
+    "name": "파보",
+    "type": "STAR_MAIN_SEQUENCE_F",
+    "resources": [],
+    "color": "#f8f7ff",
+    "create_time": 13,
+    "update_time": 13,
+    "linked_stars": [
+      "9678eb1d-345c-4834-ace5-dd37a2ee32ad"
+    ]
+  },
+  {
+    "id": "08424194-469e-4e82-8353-508e89a7434e",
+    "name": "아다라",
+    "type": "STAR_MAIN_SEQUENCE_A",
+    "resources": [],
+    "color": "#cad7ff",
+    "create_time": 14,
+    "update_time": 14,
+    "linked_stars": [
+      "b24aa23d-45b0-4987-aff2-00e8d49d2e6c"
+    ]
+  },
+  {
+    "id": "d54c6465-5870-4b7e-a445-66561509a4a2",
+    "name": "카노푸스",
+    "type": "STAR_MAIN_SEQUENCE_G",
+    "resources": [],
+    "color": "#fff4e8",
+    "create_time": 16,
+    "update_time": 16,
+    "linked_stars": [
+      "9cc6532e-65ce-42a9-b748-df217e7280d1"
+    ]
+  },
+  {
+    "id": "e7849d85-b03b-4747-84be-96274eab103e",
+    "name": "카이란",
+    "type": "STAR_MAIN_SEQUENCE_B",
+    "resources": [],
+    "color": "#aabfff",
+    "create_time": 17,
+    "update_time": 17,
+    "linked_stars": [
+      "b24aa23d-45b0-4987-aff2-00e8d49d2e6c"
+    ]
+  },
+  {
+    "id": "58b0f221-84fc-43b2-9d40-ff1b91c52a9a",
+    "name": "안타레스",
+    "type": "STAR_MAIN_SEQUENCE_A",
+    "resources": [],
+    "color": "#cad7ff",
+    "create_time": 18,
+    "update_time": 18,
     "linked_stars": []
   }
 ]
