@@ -1,52 +1,52 @@
 [
   {
     "id": "STAR_MAIN_SEQUENCE_O",
-    "category": "주계열성 O",
+    "name": "주계열성 O",
     "color_hex": "#9db4ff"
   },
   {
     "id": "STAR_MAIN_SEQUENCE_B",
-    "category": "주계열성 B",
+    "name": "주계열성 B",
     "color_hex": "#aabfff"
   },
   {
     "id": "STAR_MAIN_SEQUENCE_A",
-    "category": "주계열성 A",
+    "name": "주계열성 A",
     "color_hex": "#cad7ff"
   },
   {
     "id": "STAR_MAIN_SEQUENCE_F",
-    "category": "주계열성 F",
+    "name": "주계열성 F",
     "color_hex": "#f8f7ff"
   },
   {
     "id": "STAR_MAIN_SEQUENCE_G",
-    "category": "주계열성 G",
+    "name": "주계열성 G",
     "color_hex": "#fff4e8"
   },
   {
     "id": "STAR_MAIN_SEQUENCE_K",
-    "category": "주계열성 K",
+    "name": "주계열성 K",
     "color_hex": "#ffd2a1"
   },
   {
     "id": "STAR_MAIN_SEQUENCE_M",
-    "category": "주계열성 M",
+    "name": "주계열성 M",
     "color_hex": "#ffcc6f"
   },
   {
     "id": "STAR_WHITE_DWARF",
-    "category": "백색왜성",
+    "name": "백색왜성",
     "color_hex": "#ffffff"
   },
   {
     "id": "STAR_NEUTRON",
-    "category": "중성자별",
+    "name": "중성자별",
     "color_hex": "#ccccff"
   },
   {
     "id": "STAR_BLACK_HOLE",
-    "category": "블랙홀",
+    "name": "블랙홀",
     "color_hex": "#000000"
   }
 ]

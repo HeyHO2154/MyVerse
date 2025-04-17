@@ -33,20 +33,15 @@ def determine_main_sequence_type(size):
     return "STAR_MAIN_SEQUENCE_M"
 
 def generate_star():
-    if random.random() < 0.5:
+    if random.random() < 0.10:
         name = random.choice(STAR_NAMES)
         size = random.uniform(50, 100)
-
         type_id = determine_main_sequence_type(size)
         type_info = next(t for t in STAR_TYPES if t["id"] == type_id)
         color = type_info["color_hex"]
 
-        star = Star(
-            name=name,
-            type=type_id,
-            color=color
-        )
+        star = Star(name=name, type=type_id, color=color)
 
-        print(f"🌟 항성 생성됨: {star.name} ({type_info['category']}, size={round(size, 1)})")
+        print(f"🌟 항성 생성됨: {star.name} ({type_info['name']}, size={round(size, 1)})")
         filepath = os.path.join(os.path.dirname(__file__), "..", "InGame", "stars.json")
         save_json(star, filepath)
