@@ -1,0 +1,563 @@
+[
+  {
+    "id": "05585d9b-f25a-4f3f-9f8a-963a2dffd962",
+    "name": "사달멜리크",
+    "type": "STAR_MAIN_SEQUENCE_B",
+    "resources": [],
+    "color": "#aabfff",
+    "create_time": 2,
+    "update_time": 2,
+    "linked_stars": [
+      "72ae470b-2dd4-4e5a-9587-6a43cf237b47",
+      "53669630-6fc8-48fb-b5d7-1a8f17326a80",
+      "0368c9be-7960-4567-8cb3-88669c819cec"
+    ]
+  },
+  {
+    "id": "72ae470b-2dd4-4e5a-9587-6a43cf237b47",
+    "name": "파이시움",
+    "type": "STAR_MAIN_SEQUENCE_O",
+    "resources": [],
+    "color": "#9db4ff",
+    "create_time": 3,
+    "update_time": 3,
+    "linked_stars": [
+      "05585d9b-f25a-4f3f-9f8a-963a2dffd962",
+      "53669630-6fc8-48fb-b5d7-1a8f17326a80",
+      "d65aa7ea-0743-4477-a5f0-7aad7ade0c21",
+      "b9cb6306-f031-467a-8573-4e0c659e9cce"
+    ]
+  },
+  {
+    "id": "53669630-6fc8-48fb-b5d7-1a8f17326a80",
+    "name": "델타 벨로룸",
+    "type": "STAR_MAIN_SEQUENCE_A",
+    "resources": [],
+    "color": "#cad7ff",
+    "create_time": 5,
+    "update_time": 5,
+    "linked_stars": [
+      "72ae470b-2dd4-4e5a-9587-6a43cf237b47",
+      "05585d9b-f25a-4f3f-9f8a-963a2dffd962",
+      "0368c9be-7960-4567-8cb3-88669c819cec",
+      "d65aa7ea-0743-4477-a5f0-7aad7ade0c21"
+    ]
+  },
+  {
+    "id": "0368c9be-7960-4567-8cb3-88669c819cec",
+    "name": "알마크",
+    "type": "STAR_MAIN_SEQUENCE_B",
+    "resources": [],
+    "color": "#aabfff",
+    "create_time": 9,
+    "update_time": 9,
+    "linked_stars": [
+      "53669630-6fc8-48fb-b5d7-1a8f17326a80",
+      "05585d9b-f25a-4f3f-9f8a-963a2dffd962",
+      "20588304-3be7-4074-97f3-fa776d44e62d",
+      "8e7f53fe-fd03-4b9e-8bde-6bb8e5d1af15"
+    ]
+  },
+  {
+    "id": "d65aa7ea-0743-4477-a5f0-7aad7ade0c21",
+    "name": "알데라민",
+    "type": "STAR_MAIN_SEQUENCE_A",
+    "resources": [],
+    "color": "#cad7ff",
+    "create_time": 15,
+    "update_time": 15,
+    "linked_stars": [
+      "72ae470b-2dd4-4e5a-9587-6a43cf237b47",
+      "53669630-6fc8-48fb-b5d7-1a8f17326a80",
+      "d408329e-74b2-4a1f-af77-afaa2fc8f518",
+      "06702194-3be4-471a-9e18-1a8600853c0a"
+    ]
+  },
+  {
+    "id": "20588304-3be7-4074-97f3-fa776d44e62d",
+    "name": "PSR B1257+12",
+    "type": "STAR_MAIN_SEQUENCE_A",
+    "resources": [],
+    "color": "#cad7ff",
+    "create_time": 16,
+    "update_time": 16,
+    "linked_stars": [
+      "0368c9be-7960-4567-8cb3-88669c819cec",
+      "8e7f53fe-fd03-4b9e-8bde-6bb8e5d1af15"
+    ]
+  },
+  {
+    "id": "5f4d3132-ba9b-4ba8-9180-28ba4e629d44",
+    "name": "셰라탄",
+    "type": "STAR_MAIN_SEQUENCE_A",
+    "resources": [],
+    "color": "#cad7ff",
+    "create_time": 17,
+    "update_time": 17,
+    "linked_stars": [
+      "42dc89ac-10f1-47c3-a0f4-32bff5750b17",
+      "a3fe9fc9-489f-4b37-a01d-119076f0c8ec"
+    ]
+  },
+  {
+    "id": "d408329e-74b2-4a1f-af77-afaa2fc8f518",
+    "name": "HD 189733",
+    "type": "STAR_MAIN_SEQUENCE_A",
+    "resources": [],
+    "color": "#cad7ff",
+    "create_time": 18,
+    "update_time": 18,
+    "linked_stars": [
+      "d65aa7ea-0743-4477-a5f0-7aad7ade0c21",
+      "06702194-3be4-471a-9e18-1a8600853c0a",
+      "26c65bc9-8e0f-47d4-a9f1-77672ffbf128",
+      "fe50c197-f7a6-4d79-8812-d0bdfd457ddd"
+    ]
+  },
+  {
+    "id": "06702194-3be4-471a-9e18-1a8600853c0a",
+    "name": "에타 카리나",
+    "type": "STAR_MAIN_SEQUENCE_F",
+    "resources": [],
+    "color": "#f8f7ff",
+    "create_time": 21,
+    "update_time": 21,
+    "linked_stars": [
+      "d65aa7ea-0743-4477-a5f0-7aad7ade0c21",
+      "d408329e-74b2-4a1f-af77-afaa2fc8f518"
+    ]
+  },
+  {
+    "id": "f1e083ee-3624-4efe-b5a0-1a9f7e2f8c38",
+    "name": "트라피스트-1",
+    "type": "STAR_MAIN_SEQUENCE_K",
+    "resources": [],
+    "color": "#ffd2a1",
+    "create_time": 22,
+    "update_time": 22,
+    "linked_stars": [
+      "f21c2b5f-f719-4cdc-9761-3ce8da693a96",
+      "fbf0958d-078b-4b95-828d-74c10311829b"
+    ]
+  },
+  {
+    "id": "8e7f53fe-fd03-4b9e-8bde-6bb8e5d1af15",
+    "name": "GJ 504",
+    "type": "STAR_MAIN_SEQUENCE_G",
+    "resources": [],
+    "color": "#fff4e8",
+    "create_time": 23,
+    "update_time": 23,
+    "linked_stars": [
+      "20588304-3be7-4074-97f3-fa776d44e62d",
+      "0368c9be-7960-4567-8cb3-88669c819cec"
+    ]
+  },
+  {
+    "id": "42dc89ac-10f1-47c3-a0f4-32bff5750b17",
+    "name": "푸말하우트",
+    "type": "STAR_MAIN_SEQUENCE_A",
+    "resources": [],
+    "color": "#cad7ff",
+    "create_time": 26,
+    "update_time": 26,
+    "linked_stars": [
+      "5f4d3132-ba9b-4ba8-9180-28ba4e629d44",
+      "a3fe9fc9-489f-4b37-a01d-119076f0c8ec",
+      "e253daf1-810f-4344-95b5-a336818ca546"
+    ]
+  },
+  {
+    "id": "26c65bc9-8e0f-47d4-a9f1-77672ffbf128",
+    "name": "세기나",
+    "type": "STAR_MAIN_SEQUENCE_B",
+    "resources": [],
+    "color": "#aabfff",
+    "create_time": 27,
+    "update_time": 27,
+    "linked_stars": [
+      "d408329e-74b2-4a1f-af77-afaa2fc8f518",
+      "fe50c197-f7a6-4d79-8812-d0bdfd457ddd",
+      "bf02791a-3c76-47f2-b5fb-83c2d86b5ab9",
+      "72d73b4d-57c9-4c8a-8b14-49e159c7db29"
+    ]
+  },
+  {
+    "id": "b9cb6306-f031-467a-8573-4e0c659e9cce",
+    "name": "오메가 센타우리",
+    "type": "STAR_MAIN_SEQUENCE_F",
+    "resources": [],
+    "color": "#f8f7ff",
+    "create_time": 32,
+    "update_time": 32,
+    "linked_stars": [
+      "72ae470b-2dd4-4e5a-9587-6a43cf237b47",
+      "01de04b8-1206-44f5-9890-80ae5f36134f",
+      "9cdff359-fc0e-4b5d-a7bc-f551ed9e58e2"
+    ]
+  },
+  {
+    "id": "01de04b8-1206-44f5-9890-80ae5f36134f",
+    "name": "알파 크루시스",
+    "type": "STAR_MAIN_SEQUENCE_O",
+    "resources": [],
+    "color": "#9db4ff",
+    "create_time": 33,
+    "update_time": 33,
+    "linked_stars": [
+      "b9cb6306-f031-467a-8573-4e0c659e9cce",
+      "9cdff359-fc0e-4b5d-a7bc-f551ed9e58e2"
+    ]
+  },
+  {
+    "id": "d0fc6de9-8c71-4ab1-97e1-eff32cfa1092",
+    "name": "알리오스",
+    "type": "STAR_MAIN_SEQUENCE_F",
+    "resources": [],
+    "color": "#f8f7ff",
+    "create_time": 36,
+    "update_time": 36,
+    "linked_stars": [
+      "7b5715b0-f1d8-4028-92fd-2646e457b47c",
+      "0417b85f-1553-48d8-a200-e79830f45d33",
+      "4a8f8b54-4ec6-46f0-be98-f2861e0f3553"
+    ]
+  },
+  {
+    "id": "fe50c197-f7a6-4d79-8812-d0bdfd457ddd",
+    "name": "콜럼바 21",
+    "type": "STAR_MAIN_SEQUENCE_G",
+    "resources": [],
+    "color": "#fff4e8",
+    "create_time": 40,
+    "update_time": 40,
+    "linked_stars": [
+      "26c65bc9-8e0f-47d4-a9f1-77672ffbf128",
+      "d408329e-74b2-4a1f-af77-afaa2fc8f518"
+    ]
+  },
+  {
+    "id": "7b5715b0-f1d8-4028-92fd-2646e457b47c",
+    "name": "프로시마 센타우리",
+    "type": "STAR_MAIN_SEQUENCE_A",
+    "resources": [],
+    "color": "#cad7ff",
+    "create_time": 41,
+    "update_time": 41,
+    "linked_stars": [
+      "d0fc6de9-8c71-4ab1-97e1-eff32cfa1092",
+      "0417b85f-1553-48d8-a200-e79830f45d33"
+    ]
+  },
+  {
+    "id": "bf02791a-3c76-47f2-b5fb-83c2d86b5ab9",
+    "name": "라사라크",
+    "type": "STAR_MAIN_SEQUENCE_A",
+    "resources": [],
+    "color": "#cad7ff",
+    "create_time": 44,
+    "update_time": 44,
+    "linked_stars": [
+      "26c65bc9-8e0f-47d4-a9f1-77672ffbf128",
+      "72d73b4d-57c9-4c8a-8b14-49e159c7db29",
+      "01861000-3668-4348-b9b8-aeec5c0f98c6",
+      "c8b8d1a0-f614-4a2c-8ba5-1e8fd30c7f75"
+    ]
+  },
+  {
+    "id": "0b1695c8-90a5-485f-8eab-69b83af2d4fa",
+    "name": "HD 10180",
+    "type": "STAR_MAIN_SEQUENCE_F",
+    "resources": [],
+    "color": "#f8f7ff",
+    "create_time": 46,
+    "update_time": 46,
+    "linked_stars": []
+  },
+  {
+    "id": "4d6a8830-ef60-43e0-b332-12a31b9fd8ee",
+    "name": "YZ 세티",
+    "type": "STAR_MAIN_SEQUENCE_A",
+    "resources": [],
+    "color": "#cad7ff",
+    "create_time": 47,
+    "update_time": 47,
+    "linked_stars": []
+  },
+  {
+    "id": "9cdff359-fc0e-4b5d-a7bc-f551ed9e58e2",
+    "name": "세그마 세르펜티스",
+    "type": "STAR_MAIN_SEQUENCE_B",
+    "resources": [],
+    "color": "#aabfff",
+    "create_time": 49,
+    "update_time": 49,
+    "linked_stars": [
+      "b9cb6306-f031-467a-8573-4e0c659e9cce",
+      "01de04b8-1206-44f5-9890-80ae5f36134f"
+    ]
+  },
+  {
+    "id": "d684288f-263b-4faf-98dd-404c4f090cb5",
+    "name": "글리제 436",
+    "type": "STAR_MAIN_SEQUENCE_F",
+    "resources": [],
+    "color": "#f8f7ff",
+    "create_time": 52,
+    "update_time": 52,
+    "linked_stars": [
+      "f395135e-45fe-4fe4-a32e-350e1e6509be"
+    ]
+  },
+  {
+    "id": "22726a29-07c0-4f16-b02e-22b251743757",
+    "name": "리겔",
+    "type": "STAR_MAIN_SEQUENCE_A",
+    "resources": [],
+    "color": "#cad7ff",
+    "create_time": 53,
+    "update_time": 53,
+    "linked_stars": []
+  },
+  {
+    "id": "a3fe9fc9-489f-4b37-a01d-119076f0c8ec",
+    "name": "베타 크루시스",
+    "type": "STAR_MAIN_SEQUENCE_F",
+    "resources": [],
+    "color": "#f8f7ff",
+    "create_time": 55,
+    "update_time": 55,
+    "linked_stars": [
+      "5f4d3132-ba9b-4ba8-9180-28ba4e629d44",
+      "42dc89ac-10f1-47c3-a0f4-32bff5750b17",
+      "e253daf1-810f-4344-95b5-a336818ca546"
+    ]
+  },
+  {
+    "id": "72d73b4d-57c9-4c8a-8b14-49e159c7db29",
+    "name": "베가",
+    "type": "STAR_MAIN_SEQUENCE_A",
+    "resources": [],
+    "color": "#cad7ff",
+    "create_time": 57,
+    "update_time": 57,
+    "linked_stars": [
+      "26c65bc9-8e0f-47d4-a9f1-77672ffbf128",
+      "bf02791a-3c76-47f2-b5fb-83c2d86b5ab9"
+    ]
+  },
+  {
+    "id": "a0ec53b8-695d-4fc7-ba6f-99b73cb9e1d7",
+    "name": "HD 10180",
+    "type": "STAR_MAIN_SEQUENCE_A",
+    "resources": [],
+    "color": "#cad7ff",
+    "create_time": 58,
+    "update_time": 58,
+    "linked_stars": [
+      "02477814-332a-422e-8ffd-702450fd6e5f",
+      "04cf335c-c127-4e87-b68e-2b0d31829c8a"
+    ]
+  },
+  {
+    "id": "0417b85f-1553-48d8-a200-e79830f45d33",
+    "name": "델타 벨로룸",
+    "type": "STAR_MAIN_SEQUENCE_A",
+    "resources": [],
+    "color": "#cad7ff",
+    "create_time": 62,
+    "update_time": 62,
+    "linked_stars": [
+      "d0fc6de9-8c71-4ab1-97e1-eff32cfa1092",
+      "7b5715b0-f1d8-4028-92fd-2646e457b47c",
+      "4a8f8b54-4ec6-46f0-be98-f2861e0f3553"
+    ]
+  },
+  {
+    "id": "01861000-3668-4348-b9b8-aeec5c0f98c6",
+    "name": "메라크",
+    "type": "STAR_MAIN_SEQUENCE_B",
+    "resources": [],
+    "color": "#aabfff",
+    "create_time": 64,
+    "update_time": 64,
+    "linked_stars": [
+      "bf02791a-3c76-47f2-b5fb-83c2d86b5ab9"
+    ]
+  },
+  {
+    "id": "8407572b-ebeb-4dc8-9a23-e305d66b8da0",
+    "name": "덴볼라",
+    "type": "STAR_MAIN_SEQUENCE_F",
+    "resources": [],
+    "color": "#f8f7ff",
+    "create_time": 65,
+    "update_time": 65,
+    "linked_stars": [
+      "67799e8d-8983-49ea-996f-bbbed884a510",
+      "16b1c8a9-a2f4-4f7c-9d46-ce68bb3ff427"
+    ]
+  },
+  {
+    "id": "4a8f8b54-4ec6-46f0-be98-f2861e0f3553",
+    "name": "미모사",
+    "type": "STAR_MAIN_SEQUENCE_F",
+    "resources": [],
+    "color": "#f8f7ff",
+    "create_time": 68,
+    "update_time": 68,
+    "linked_stars": [
+      "d0fc6de9-8c71-4ab1-97e1-eff32cfa1092",
+      "0417b85f-1553-48d8-a200-e79830f45d33"
+    ]
+  },
+  {
+    "id": "67799e8d-8983-49ea-996f-bbbed884a510",
+    "name": "레굴루스",
+    "type": "STAR_MAIN_SEQUENCE_M",
+    "resources": [],
+    "color": "#ffcc6f",
+    "create_time": 70,
+    "update_time": 70,
+    "linked_stars": [
+      "8407572b-ebeb-4dc8-9a23-e305d66b8da0",
+      "16b1c8a9-a2f4-4f7c-9d46-ce68bb3ff427"
+    ]
+  },
+  {
+    "id": "3522a878-9b08-4134-8543-34c89de34eb9",
+    "name": "프로시마 센타우리",
+    "type": "STAR_MAIN_SEQUENCE_B",
+    "resources": [],
+    "color": "#aabfff",
+    "create_time": 79,
+    "update_time": 79,
+    "linked_stars": [
+      "54026fce-97eb-4f78-8cce-866ab2ca532e"
+    ]
+  },
+  {
+    "id": "c8b8d1a0-f614-4a2c-8ba5-1e8fd30c7f75",
+    "name": "82 에리다니",
+    "type": "STAR_MAIN_SEQUENCE_A",
+    "resources": [],
+    "color": "#cad7ff",
+    "create_time": 80,
+    "update_time": 80,
+    "linked_stars": [
+      "bf02791a-3c76-47f2-b5fb-83c2d86b5ab9"
+    ]
+  },
+  {
+    "id": "54026fce-97eb-4f78-8cce-866ab2ca532e",
+    "name": "파보",
+    "type": "STAR_MAIN_SEQUENCE_B",
+    "resources": [],
+    "color": "#aabfff",
+    "create_time": 81,
+    "update_time": 81,
+    "linked_stars": [
+      "3522a878-9b08-4134-8543-34c89de34eb9"
+    ]
+  },
+  {
+    "id": "e253daf1-810f-4344-95b5-a336818ca546",
+    "name": "아다라",
+    "type": "STAR_MAIN_SEQUENCE_A",
+    "resources": [],
+    "color": "#cad7ff",
+    "create_time": 82,
+    "update_time": 82,
+    "linked_stars": [
+      "42dc89ac-10f1-47c3-a0f4-32bff5750b17",
+      "a3fe9fc9-489f-4b37-a01d-119076f0c8ec"
+    ]
+  },
+  {
+    "id": "f21c2b5f-f719-4cdc-9761-3ce8da693a96",
+    "name": "사우스 피크",
+    "type": "STAR_MAIN_SEQUENCE_F",
+    "resources": [],
+    "color": "#f8f7ff",
+    "create_time": 83,
+    "update_time": 83,
+    "linked_stars": [
+      "f1e083ee-3624-4efe-b5a0-1a9f7e2f8c38",
+      "fbf0958d-078b-4b95-828d-74c10311829b"
+    ]
+  },
+  {
+    "id": "02477814-332a-422e-8ffd-702450fd6e5f",
+    "name": "폴룩스",
+    "type": "STAR_MAIN_SEQUENCE_F",
+    "resources": [],
+    "color": "#f8f7ff",
+    "create_time": 85,
+    "update_time": 85,
+    "linked_stars": [
+      "a0ec53b8-695d-4fc7-ba6f-99b73cb9e1d7",
+      "04cf335c-c127-4e87-b68e-2b0d31829c8a"
+    ]
+  },
+  {
+    "id": "16b1c8a9-a2f4-4f7c-9d46-ce68bb3ff427",
+    "name": "세기나",
+    "type": "STAR_MAIN_SEQUENCE_B",
+    "resources": [],
+    "color": "#aabfff",
+    "create_time": 86,
+    "update_time": 86,
+    "linked_stars": [
+      "8407572b-ebeb-4dc8-9a23-e305d66b8da0",
+      "67799e8d-8983-49ea-996f-bbbed884a510"
+    ]
+  },
+  {
+    "id": "f395135e-45fe-4fe4-a32e-350e1e6509be",
+    "name": "HD 209458",
+    "type": "STAR_MAIN_SEQUENCE_F",
+    "resources": [],
+    "color": "#f8f7ff",
+    "create_time": 88,
+    "update_time": 88,
+    "linked_stars": [
+      "d684288f-263b-4faf-98dd-404c4f090cb5"
+    ]
+  },
+  {
+    "id": "04cf335c-c127-4e87-b68e-2b0d31829c8a",
+    "name": "오메가 센타우리",
+    "type": "STAR_MAIN_SEQUENCE_K",
+    "resources": [],
+    "color": "#ffd2a1",
+    "create_time": 90,
+    "update_time": 90,
+    "linked_stars": [
+      "02477814-332a-422e-8ffd-702450fd6e5f",
+      "a0ec53b8-695d-4fc7-ba6f-99b73cb9e1d7"
+    ]
+  },
+  {
+    "id": "fbf0958d-078b-4b95-828d-74c10311829b",
+    "name": "시그마 아쿠아리",
+    "type": "STAR_MAIN_SEQUENCE_K",
+    "resources": [],
+    "color": "#ffd2a1",
+    "create_time": 91,
+    "update_time": 91,
+    "linked_stars": [
+      "f21c2b5f-f719-4cdc-9761-3ce8da693a96",
+      "f1e083ee-3624-4efe-b5a0-1a9f7e2f8c38"
+    ]
+  },
+  {
+    "id": "ab572a03-7360-409a-b014-26f7722800e9",
+    "name": "알타이르",
+    "type": "STAR_MAIN_SEQUENCE_A",
+    "resources": [],
+    "color": "#cad7ff",
+    "create_time": 95,
+    "update_time": 95,
+    "linked_stars": []
+  }
+]

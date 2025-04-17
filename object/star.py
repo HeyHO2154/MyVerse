@@ -49,6 +49,12 @@ def generate_star():
         if stars:
             target = random.choice(stars)
             if len(target.get("linked_stars", [])) < 4:
+                if len(target.get("linked_stars", [])) > 0:
+                    target2_id = random.choice(target["linked_stars"])
+                    target2 = next((s for s in stars if s["id"] == target2_id), None)
+                    if target2 and len(target2.get("linked_stars", [])) < 4:
+                        linked_stars.append(target2["id"])
+                        target2["linked_stars"].append(id)
                 linked_stars.append(target["id"])
                 target["linked_stars"].append(id)
 
