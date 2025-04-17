@@ -1,6 +1,3 @@
-<!-- python -m http.server 8000
-http://localhost:8000/debug.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +13,7 @@ http://localhost:8000/debug.html -->
     svg {
       width: 100vw;
       height: 100vh;
+      cursor: grab;
     }
     .node circle {
       stroke: #fff;
@@ -33,7 +31,9 @@ http://localhost:8000/debug.html -->
   </style>
 </head>
 <body>
-<svg></svg>
+<svg>
+  <g id="graph"></g>
+</svg>
 <script>
 fetch("stars.json")
   .then(res => res.json())
@@ -58,15 +58,25 @@ fetch("stars.json")
     });
 
     const svg = d3.select("svg");
+    const graph = d3.select("#graph");
     const width = window.innerWidth;
     const height = window.innerHeight;
+
+    // 줌 및 팬 설정
+    const zoom = d3.zoom()
+      .scaleExtent([0.1, 4])
+      .on("zoom", (event) => {
+        graph.attr("transform", event.transform);
+      });
+
+    svg.call(zoom);
 
     const simulation = d3.forceSimulation(nodes)
       .force("link", d3.forceLink(links).id(d => d.id).distance(80))
       .force("charge", d3.forceManyBody().strength(-250))
       .force("center", d3.forceCenter(width / 2, height / 2));
 
-    const link = svg.append("g")
+    const link = graph.append("g")
       .attr("stroke", "#aaa")
       .attr("stroke-width", 1.5)
       .selectAll("line")
@@ -74,7 +84,7 @@ fetch("stars.json")
       .enter().append("line")
       .attr("class", "link");
 
-    const node = svg.append("g")
+    const node = graph.append("g")
       .attr("stroke", "#fff")
       .attr("stroke-width", 1.5)
       .selectAll("g")
