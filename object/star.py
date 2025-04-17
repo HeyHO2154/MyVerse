@@ -58,7 +58,7 @@ def generate_star():
             colors.append(color)
 
             # 첫 항성 이후에는 10% 확률로만 반복
-            if len(types) >= 1 and random.random() > 0.2:
+            if len(types) >= 1 and random.random() > 0.3:
                 break
 
         #항성계 연결
