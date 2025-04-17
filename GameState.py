@@ -7,11 +7,11 @@ class GameState:
         data = load_json(self.path)
 
         if data:
+            self.time = data[0].get("time", 0)      
+        else:
             self.time = 0
             save_json([{"time": self.time}], self.path)
-            print("hi")
-        else:
-            self.time = data.get("time", 0)
+            
 
     def tick(self):
         self.time += 1
