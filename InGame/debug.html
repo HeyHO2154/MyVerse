@@ -104,14 +104,24 @@ fetch("stars.json")
         .on("drag", dragged)
         .on("end", dragended));
 
-    node.append("circle")
-      .attr("r", d => d.size/10)
-      .attr("fill", d => d.color);
+    node.each(function(d) {
+        const g = d3.select(this);
+        const count = d.size.length;
+
+        d.size.forEach((s, i) => {
+            g.append("circle")
+            .attr("r", s / 10)
+            .attr("cx", i * 12 - (count - 1) * 6)  // 살짝 좌우로 분산 배치
+            .attr("fill", d.color[i] || "#888");
+        });
+    });
 
     node.append("text")
-      .attr("x", 10)
-      .attr("y", 4)
-      .text(d => d.name);
+        .attr("x", 0)
+        .attr("y", 20)  // 아래로 살짝 내리기
+        .attr("text-anchor", "middle")
+        .text(d => d.name);
+
 
     simulation.on("tick", () => {
       link

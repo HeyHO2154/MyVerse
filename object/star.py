@@ -9,10 +9,10 @@ class Star:
     def __init__(self, name, size, type, galaxy, id=str(uuid.uuid4()), resources=None, color=None, linked_stars=None):
         self.id = id
         self.name = name
-        self.size = size
-        self.type = type        
+        self.size = size or []
+        self.type = type or []    
         self.resources = resources or []
-        self.color = color                 
+        self.color = color or []             
         self.create_time = state.time
         self.update_time = state.time
         self.linked_stars = linked_stars or []
@@ -41,14 +41,28 @@ def generate_star():
     if random.random() < math.exp(-len(stars) / 20):
         id = str(uuid.uuid4())
         name = random.choice(STAR_NAMES)
-        size = random.uniform(50, 100)
-        type_id = determine_main_sequence_type(size)
-        type_info = next(t for t in STAR_TYPES if t["id"] == type_id)
-        color = type_info["color_hex"]
         galaxy = random.choice(GALXAY_NAMES)
 
-        linked_stars = []
+        #N중성계
+        types = []
+        sizes = []
+        colors = []
+        while True:
+            size = random.uniform(50, 100)
+            type_id = determine_main_sequence_type(size)
+            type_info = next(t for t in STAR_TYPES if t["id"] == type_id)
+            color = type_info["color_hex"]
 
+            sizes.append(size)
+            types.append(type_id)
+            colors.append(color)
+
+            # 첫 항성 이후에는 10% 확률로만 반복
+            if len(types) >= 1 and random.random() > 0.3:
+                break
+
+        #항성계 연결
+        linked_stars = []
         if stars:
             target = random.choice(stars)
             if len(target.get("linked_stars", [])) < 4:
@@ -62,7 +76,7 @@ def generate_star():
                 linked_stars.append(target["id"])
                 target["linked_stars"].append(id)
 
-        star = Star(id=id, name=name, size=size, type=type_id, color=color, linked_stars=linked_stars, galaxy=galaxy)
+        star = Star(id=id, name=name, size=sizes, type=types, color=colors, linked_stars=linked_stars, galaxy=galaxy)
         stars.append(star)
         save_json(stars, os.path.join(os.path.dirname(__file__), "..", "InGame", "stars.json"))
         print(f"🌟 항성 생성됨: {star.name} ({type_info['name']}, size={round(size, 2)})")
