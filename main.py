@@ -2,7 +2,7 @@ import time
 import object.star as star
 from GameState import state
 
-def run_every_second():
+def Main():
     while True:
         time.sleep(1)
         state.tick()
@@ -11,4 +11,4 @@ def run_every_second():
         
 
 if __name__ == "__main__":
-    run_every_second()
+    Main()

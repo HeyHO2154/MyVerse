@@ -4,10 +4,7 @@ import json
 def load_json(filepath):
     if os.path.exists(filepath):
         with open(filepath, "r", encoding="utf-8") as f:
-            try:
-                return json.load(f)
-            except json.JSONDecodeError:
-                pass
+            return json.load(f)
     return []
 
 def save_json(obj_list, filepath):
