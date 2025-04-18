@@ -2,7 +2,6 @@ from utils.data_util import save_json, load_json, load_txt
 import os
 import random
 import uuid
-import math
 from GameState import state
 
 class Star:
@@ -38,7 +37,7 @@ def determine_main_sequence_type(size):
 
 def generate_star():
     stars = load_json(os.path.join(os.path.dirname(__file__), "..", "InGame", "stars.json"))
-    if random.random() < math.exp(-len(stars) / 20): #지수함수, 항성 수가 많을 수록 생성 확률 감소(최대치 약 100개)
+    if random.random() < 1 / (len(stars)+1): #기존 수량에 반비례한 생성 확률
         id = str(uuid.uuid4())
         name = random.choice(STAR_NAMES)
         galaxy = random.choice(GALXAY_NAMES)
@@ -57,8 +56,8 @@ def generate_star():
             types.append(type_id)
             colors.append(color)
 
-            # 첫 항성 이후에는 10% 확률로만 반복
-            if len(types) >= 1 and random.random() > 0.3:
+            # 첫 항성 이후에는 확률로만 반복
+            if random.random() > 0.3:
                 break
 
         #항성계 연결(약 1~3개, 낮은 확률로 4+)
@@ -68,18 +67,18 @@ def generate_star():
             candidate = target["linked_stars"].copy()
             candidate.append(target["id"])
             while candidate:
-                if random.random() > 0.3:
-                    break
-
                 galaxy = target["galaxy"]
                 target2_id = random.choice(candidate)
                 target2 = next((s for s in stars if s["id"] == target2_id), None)
                 linked_stars.append(target2["id"])
                 target2["linked_stars"].append(id)
                 candidate.remove(target2_id)
-        
 
+                # 첫 항성 이후에는 확률로만 반복
+                if random.random() > 0.1:
+                    break
+        
         star = Star(id=id, name=name, size=sizes, type=types, color=colors, linked_stars=linked_stars, galaxy=galaxy)
         stars.append(star)
         save_json(stars, os.path.join(os.path.dirname(__file__), "..", "InGame", "stars.json"))
-        print(f"🌟 항성 생성됨: {star.name} ({type_info['name']}, size={round(size, 2)})")
+        print(f"🌟 {star.name} ({type_info['name']}, size={round(size, 2)}) {len(stars)}번째 항성 탄생")

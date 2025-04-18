@@ -1,13 +1,17 @@
 import time
 import object.star as star
+import object.galaxy as galaxy
 from GameState import state
 
 def Main():
-    while True:
-        time.sleep(1)
+    #현실시간 1일 기준
+    while state.time < 86400:
+        #time.sleep(1)
         state.tick()
 
-        star.generate_star()
+        galaxy.generate_galaxy()
+        #star.generate_star()
+        #planet.generate_planet()
         
 
 if __name__ == "__main__":
