@@ -17,9 +17,14 @@ class Star:
         self.linked_stars = linked_stars or []
         self.galaxy = galaxy
 
-GALXAY_NAMES = load_txt(os.path.join(os.path.dirname(__file__), "..", "data", "galaxy_names.txt"))
-STAR_NAMES = load_txt(os.path.join(os.path.dirname(__file__), "..", "data", "star_names.txt"))
+STAR_NAMES = load_txt(os.path.join(os.path.dirname(__file__), "..", "data/names", "star_names.txt"))
 STAR_TYPES = load_json(os.path.join(os.path.dirname(__file__), "..", "data", "star_types.json"))
+
+def star(galaxy):
+    stars = load_json(os.path.join(os.path.dirname(__file__), "..", "InGame", "stars.json"))
+    for s in stars:
+        print("행성")
+    generate_star(galaxy, stars)
 
 def determine_main_sequence_type(size):
     thresholds = [
@@ -35,12 +40,10 @@ def determine_main_sequence_type(size):
             return type_id
     return "STAR_MAIN_SEQUENCE_M"
 
-def generate_star():
-    stars = load_json(os.path.join(os.path.dirname(__file__), "..", "InGame", "stars.json"))
+def generate_star(galaxy, stars):
     if random.random() < 1 / (len(stars)+1): #기존 수량에 반비례한 생성 확률
         id = str(uuid.uuid4())
         name = random.choice(STAR_NAMES)
-        galaxy = random.choice(GALXAY_NAMES)
 
         #N중성계(약 1~3개, 낮은 확률로 4+)
         types = []
@@ -61,13 +64,13 @@ def generate_star():
                 break
 
         #항성계 연결(약 1~3개, 낮은 확률로 4+)
+        #####은하스럽게 연결해야함 <= 여기부터 작업하면됨
         linked_stars = []
         if stars:
             target = random.choice(stars)        
             candidate = target["linked_stars"].copy()
             candidate.append(target["id"])
             while candidate:
-                galaxy = target["galaxy"]
                 target2_id = random.choice(candidate)
                 target2 = next((s for s in stars if s["id"] == target2_id), None)
                 linked_stars.append(target2["id"])
