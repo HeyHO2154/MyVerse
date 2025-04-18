@@ -3,6 +3,7 @@ from utils.data_util import save_json, load_json
 
 class GameState:
     def __init__(self):
+        print("빅뱅!")
         self.path = os.path.join(os.path.dirname(__file__), "InGame", "GameState.json")
         data = load_json(self.path)
 

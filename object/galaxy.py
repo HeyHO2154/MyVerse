@@ -11,7 +11,7 @@ class Galaxy:
         self.create_time = state.time
         self.update_time = state.time
 
-GALXAY_NAMES = load_txt(os.path.join(os.path.dirname(__file__), "..", "data", "galaxy_names.txt"))
+GALXAY_NAMES = load_txt(os.path.join(os.path.dirname(__file__), "..", "data/names", "galaxy_names.txt"))
 
 def generate_galaxy():
     galaxies = load_json(os.path.join(os.path.dirname(__file__), "..", "InGame", "galaxies.json"))
@@ -19,4 +19,4 @@ def generate_galaxy():
         galaxy = Galaxy(name=random.choice(GALXAY_NAMES))
         galaxies.append(galaxy)
         save_json(galaxies, os.path.join(os.path.dirname(__file__), "..", "InGame", "galaxies.json"))
-        print(f"🌌 {galaxy.name} {len(galaxies)}번째 항성 탄생")
+        print(f"🌌 {galaxy.name} {len(galaxies)}번째 은하 탄생")
