@@ -1,0 +1,43 @@
+[
+    {
+      "id": "HABITABLE_TEMPERATE",
+      "habitable": true,
+      "name": "온대 행성"
+    },
+    {
+      "id": "HABITABLE_COLD",
+      "habitable": true,
+      "name": "냉대 행성"
+    },
+    {
+      "id": "HABITABLE_ARID",
+      "habitable": true,
+      "name": "건조 행성"
+    },
+    {
+      "id": "HABITABLE_TROPICAL",
+      "habitable": true,
+      "name": "열대 행성"
+    },
+    {
+      "id": "BARREN_WASTELAND",
+      "habitable": false,
+      "name": "황무지 행성"
+    },
+    {
+      "id": "BARREN_ICE",
+      "habitable": false,
+      "name": "얼음 행성"
+    },
+    {
+      "id": "BARREN_GAS",
+      "habitable": false,
+      "name": "가스 행성"
+    },
+    {
+      "id": "BARREN_ASTEROID",
+      "habitable": false,
+      "name": "소행성"
+    }
+  ]
+  

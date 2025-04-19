@@ -4,9 +4,8 @@ import random
 import uuid
 from GameState import state
 
-import object.star as star
+from object import star
 
-#초대질량 블랙홀(최상위 존재, 독자적으로 탄생) - 은하 형성의 중심
 class Galaxy:
     def __init__(self, name):
         self.id = str(uuid.uuid4())
@@ -19,7 +18,8 @@ GALAXY_NAMES = load_txt(os.path.join(os.path.dirname(__file__), "..", "data/name
 def galaxy():
     galaxies = load_json(os.path.join(os.path.dirname(__file__), "..", "InGame", "galaxies.json"))
     for g in galaxies:
-        star.star(g["id"])
+        print(f"🌌 {g['name']} 은하 순회")
+        star.generate_star(g)
     generate_galaxy(galaxies)
 
 def generate_galaxy(galaxies):
