@@ -63,23 +63,23 @@ def generate_star(galaxy, stars):
             if random.random() > 0.3:
                 break
 
-        #항성계 연결(약 1~3개, 낮은 확률로 4+)
-        #####은하스럽게 연결해야함 <= 여기부터 작업하면됨
+        #항성간 연결(약 1~3개, 낮은 확률로 4+)
         linked_stars = []
-        if stars:
-            target = random.choice(stars)        
+        same_galaxy_stars = [s for s in stars if s["galaxy"] == galaxy]
+        if stars and same_galaxy_stars:
+            target = random.choice(same_galaxy_stars)
             candidate = target["linked_stars"].copy()
             candidate.append(target["id"])
             while candidate:
                 target2_id = random.choice(candidate)
                 target2 = next((s for s in stars if s["id"] == target2_id), None)
-                linked_stars.append(target2["id"])
-                target2["linked_stars"].append(id)
+                if random.random() < 1/((len(target2["linked_stars"]))+1):
+                    linked_stars.append(target2["id"])
+                    target2["linked_stars"].append(id)
                 candidate.remove(target2_id)
-
-                # 첫 항성 이후에는 확률로만 반복
-                if random.random() > 0.1:
-                    break
+            if not linked_stars:
+                linked_stars.append(target["id"])
+                target["linked_stars"].append(id)
         
         star = Star(id=id, name=name, size=sizes, type=types, color=colors, linked_stars=linked_stars, galaxy=galaxy)
         stars.append(star)
