@@ -1,5 +1,4 @@
-// src/WebSocketClient.tsx
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const WebSocketClient = () => {
   const [log, setLog] = useState<string[]>([]);

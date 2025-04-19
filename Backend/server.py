@@ -29,23 +29,22 @@ async def websocket_endpoint(websocket: WebSocket, user_id: str):
 
 async def game_loop():
     while True:
-        await asyncio.sleep(1)  # 현실 시간 1초 = 1틱
-        state.tick()
-
-        # 1. 게임 로직
-        # galaxy.galaxy()
-        # star.star()
-        # planet.planet()
-
-        # 2. 액션 큐 처리
+        # 1. 액션 큐 처리
         for user_id, action in action_queue:
             print(f"🛠️ {user_id}의 행동 처리: {action}")
         action_queue.clear()
+
+        # 2. 게임 로직
+        state.tick()
+        # galaxy.galaxy()
+        # star.star()
+        # planet.planet()
 
         # 3. 유저들에게 결과 푸시
         galaxies = load_json(os.path.join(os.path.dirname(__file__), "InGame", "galaxies.json"))
         stars = load_json(os.path.join(os.path.dirname(__file__), "InGame", "stars.json"))
         planets = load_json(os.path.join(os.path.dirname(__file__), "InGame", "planets.json"))
+        
         for user_id, ws in connected_users.items():
             try:
                 await ws.send_json({
@@ -57,6 +56,10 @@ async def game_loop():
                 })
             except Exception as e:
                 print(f"🛠️ {user_id}에게 전송 실패: {e}")
+
+        # 4. 현실 시간 1초 = 1틱
+        await asyncio.sleep(1) 
+
 
 @app.on_event("startup")
 async def startup_event():
