@@ -1,3 +1,4 @@
+import os
 from utils.data_util import load_json
 import asyncio
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
@@ -42,9 +43,9 @@ async def game_loop():
         action_queue.clear()
 
         # 3. 유저들에게 결과 푸시
-        galaxies = load_json("InGame/galaxies.json")
-        stars = load_json("InGame/stars.json")
-        planets = load_json("InGame/planets.json")
+        galaxies = load_json(os.path.join(os.path.dirname(__file__), "InGame", "galaxies.json"))
+        stars = load_json(os.path.join(os.path.dirname(__file__), "InGame", "stars.json"))
+        planets = load_json(os.path.join(os.path.dirname(__file__), "InGame", "planets.json"))
         for user_id, ws in connected_users.items():
             try:
                 await ws.send_json({
