@@ -36,9 +36,9 @@ async def game_loop():
 
         # 2. 게임 로직
         state.tick()
-        # galaxy.galaxy()
-        # star.star()
-        # planet.planet()
+        galaxy.galaxy()
+        star.star()
+        planet.planet()
 
         # 3. 유저들에게 결과 푸시
         galaxies = load_json(os.path.join(os.path.dirname(__file__), "InGame", "galaxies.json"))
