@@ -1,0 +1,20 @@
+/* 전체 기본 리셋 */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;     /* ✅ 스크롤 제거 */
+    background-color: #000;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Pretendard', sans-serif;
+    color: white;
+  }
+  
+  /* SVG 전체 꽉 차게 */
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #000;
+  }
+  
