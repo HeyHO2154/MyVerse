@@ -1,4 +1,4 @@
-import { subscribe } from "../websocket.js";
+import { subscribe } from "../websocket/websocket.js";
 
 let svg, graphGroup, simulation;
 let nodeGroup, linkGroup;
