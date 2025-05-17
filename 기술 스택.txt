@@ -1,0 +1,8 @@
+벡엔드
+- 파이썬 FastAPI, 웹 소켓
+- Json(DB)
+
+프론트엔드
+- HTML(CSS, JS)
+- npm
+- electron(exe 베포용)
