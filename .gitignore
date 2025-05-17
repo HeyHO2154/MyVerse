@@ -1,2 +1,6 @@
-InGame/*
+Backend/InGame/*
+
+Frontend/dist/*
+Frontend/node_modules/*
+
 MyVerse(베포용)/*
