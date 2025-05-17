@@ -1,0 +1,161 @@
+<!-- force-directed layout
+python -m http.server 8000
+http://localhost:8000/debug.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Star Network Visualization</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: #fff;
+      overflow: hidden;
+    }
+    svg {
+      width: 100vw;
+      height: 100vh;
+      cursor: grab;
+    }
+    .node circle {
+      stroke: #fff;
+      stroke-width: 1.5px;
+    }
+    .node text {
+      fill: white;
+      font-size: 10px;
+      stroke: none; 
+      pointer-events: none;
+    }
+    .link {
+      stroke: #888;
+      stroke-opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+<svg>
+  <g id="graph"></g>
+</svg>
+<script>
+fetch("stars.json")
+  .then(res => res.json())
+  .then(data => {
+    const typeColorMap = {
+      "STAR_MAIN_SEQUENCE_A": "#f0f8ff",
+      "STAR_MAIN_SEQUENCE_B": "#add8e6",
+      "STAR_MAIN_SEQUENCE_G": "#ffff99",
+      "STAR_NEUTRON": "#ff69b4",
+      "STAR_WHITE_DWARF": "#cccccc",
+    };
+
+    const nodes = data.map(star => ({
+      id: star.id,
+      name: star.name,
+      size: star.size,
+      color: star.type.map(t => typeColorMap[t.id] || "#888"),
+    }));
+
+    const linksSet = new Set();
+    const links = [];
+
+    data.forEach(star => {
+      (star.linked_stars || []).forEach(linkedId => {
+        const key = [star.id, linkedId].sort().join("-");
+        if (!linksSet.has(key)) {
+          linksSet.add(key);
+          links.push({ source: star.id, target: linkedId });
+        }
+      });
+    });
+
+    const svg = d3.select("svg");
+    const graph = d3.select("#graph");
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    const zoom = d3.zoom()
+      .scaleExtent([0.1, 4])
+      .on("zoom", (event) => {
+        graph.attr("transform", event.transform);
+      });
+
+    svg.call(zoom);
+
+    const simulation = d3.forceSimulation(nodes)
+      .force("link", d3.forceLink(links).id(d => d.id).distance(80))
+      .force("charge", d3.forceManyBody().strength(-250))
+      .force("center", d3.forceCenter(width / 2, height / 2));
+
+    const link = graph.append("g")
+      .attr("stroke", "#aaa")
+      .attr("stroke-width", 1.5)
+      .selectAll("line")
+      .data(links)
+      .enter().append("line")
+      .attr("class", "link");
+
+    const node = graph.append("g")
+      .attr("stroke", "#fff")
+      .attr("stroke-width", 1.5)
+      .selectAll("g")
+      .data(nodes)
+      .enter().append("g")
+      .attr("class", "node")
+      .call(d3.drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended));
+
+    node.each(function(d) {
+      const g = d3.select(this);
+      const count = d.size.length;
+
+      d.size.forEach((s, i) => {
+        g.append("circle")
+          .attr("r", s / 10)
+          .attr("cx", i * 12 - (count - 1) * 6)
+          .attr("fill", d.color[i] || "#888");
+      });
+    });
+
+    node.append("text")
+      .attr("x", 0)
+      .attr("y", 20)
+      .attr("text-anchor", "middle")
+      .text(d => d.name);
+
+    simulation.on("tick", () => {
+      link
+        .attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y);
+
+      node
+        .attr("transform", d => `translate(${d.x},${d.y})`);
+    });
+
+    function dragstarted(event, d) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    }
+
+    function dragged(event, d) {
+      d.fx = event.x;
+      d.fy = event.y;
+    }
+
+    function dragended(event, d) {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    }
+  });
+</script>
+</body>
+</html>
