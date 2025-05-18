@@ -23,3 +23,6 @@ class Universe:
 
         # 은하 생성
         Galaxy.generate_galaxy()
+
+        # 은하 순회
+        Galaxy.galaxies()
