@@ -3,7 +3,7 @@ import uvicorn  #웹 서버(FastAPI 실행용)
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect #웹 프레임워크
 from contextlib import asynccontextmanager  #비동기 컨텍스트 관리(시작/종료 시점 관리)
 
-from object.Universe import Universe
+from Object.Universe import Universe
 
 
 @asynccontextmanager
@@ -38,11 +38,12 @@ async def websocket_endpoint(websocket: WebSocket, user_id: str):
         connected_users.pop(user_id, None)
         print(f"🛠️ {user_id} 연결 끊김")
 
-#메인 루프
+
+#메인 로직
 async def main_loop():
 
     universe = Universe()   #우주 창조
-    
+
     while True:
         # 1. 액션 큐 처리
         for user_id, action in action_queue:
@@ -59,6 +60,6 @@ async def main_loop():
         await asyncio.sleep(1) 
 
 
-#직접 실행 시 작동
+#메인 서버
 if __name__ == "__main__":
-    uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("Server:app", host="0.0.0.0", port=8000, reload=True)
