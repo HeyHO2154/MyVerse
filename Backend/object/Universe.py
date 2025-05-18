@@ -19,7 +19,7 @@ class Universe:
     def tick(self):
         self.time += 1
         update_json("/DB/InGame/Universes.json", self)
-        print(f"🕒 현재 게임 시간: {self.time}")
+        print(f"🕒 게임 시간: {self.time}")
 
         # 은하 생성
         Galaxy.generate_galaxy()
