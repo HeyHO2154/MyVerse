@@ -21,4 +21,5 @@ class Universe:
         update_json("/DB/InGame/Universes.json", self)
         print(f"🕒 현재 게임 시간: {self.time}")
 
+        # 은하 생성
         Galaxy.generate_galaxy()
