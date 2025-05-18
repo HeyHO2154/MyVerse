@@ -2,9 +2,9 @@ from Backend.utils.data import save_json, load_json, load_txt
 import os
 import random
 import uuid
-from Backend.object.Universe import state
+from Backend.Object.Universe import state
 
-from object import planet
+from Backend.Object import planet
 
 class Star:
     def __init__(self, name, size, type, galaxy, id=id, resources=None, linked_stars=None):

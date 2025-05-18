@@ -2,7 +2,7 @@ from Backend.utils.data import save_json, load_json, load_txt
 import os
 import random
 import uuid
-from Backend.object.Universe import state
+from Backend.Object.Universe import state
 
 class Planet:
     def __init__(self, name, size, type, star, id=str(uuid.uuid4()), resources=None):
