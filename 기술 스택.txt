@@ -5,4 +5,6 @@
 프론트엔드
 - HTML(CSS, JS)
 - npm
-- electron(exe 베포용)
+- electron(exe 베포)
+- PWA(apk 베포)
+- https(Web 베포)
