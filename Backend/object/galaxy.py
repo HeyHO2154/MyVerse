@@ -15,6 +15,7 @@ class Galaxy:
         self.create_time = universe['time']  # 현재 우주 시간
         self.update_time = universe['time']
 
+
 def galaxies():
     galaxies = read_json("/DB/InGame/Galaxies.json")
     for g in galaxies:
