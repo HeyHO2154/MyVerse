@@ -1,30 +1,28 @@
-from Backend.utils.data import save_json, load_json, load_txt
-import os
 import random
 import uuid
-from Backend.Object.Universe import state
+import math
+from utils.data import load_txt, create_json, read_json
 
-from Backend.Object import star
+
+GALAXY_NAMES = load_txt("/DB/names/galaxy_names.txt")
 
 class Galaxy:
-    def __init__(self, name):
+    def __init__(self):
+        universe = read_json("/DB/InGame/Universes.json")[0]  # 현재 우주 상태
+        
         self.id = str(uuid.uuid4())
-        self.name = name         
-        self.create_time = state.time
-        self.update_time = state.time
+        self.name = random.choice(GALAXY_NAMES)         
+        self.create_time = universe['time']  # 현재 우주 시간
+        self.update_time = universe['time']
 
-GALAXY_NAMES = load_txt(os.path.join(os.path.dirname(__file__), "..", "data/names", "galaxy_names.txt"))
-
-def galaxy():
-    galaxies = load_json(os.path.join(os.path.dirname(__file__), "..", "InGame", "galaxies.json"))
+def galaxies():
+    galaxies = read_json("/DB/InGame/Galaxies.json")
     for g in galaxies:
         print(f"🌌 {g['name']} 은하 순회")
-        star.generate_star(g)
-    generate_galaxy(galaxies)
+        # star.generate_star(g)
 
-def generate_galaxy(galaxies):
-    if random.random() < 1 / (len(galaxies)+1): #기존 수량에 반비례한 생성 확률
-        galaxy = Galaxy(name=random.choice(GALAXY_NAMES))
-        galaxies.append(galaxy)
-        save_json(galaxies, os.path.join(os.path.dirname(__file__), "..", "InGame", "galaxies.json"))
-        print(f"🌌 {galaxy.name} {len(galaxies)}번째 은하 탄생")
+def generate_galaxy():
+    if random.random() < math.e/10: #자연상수 e = 2.718281828459045
+        galaxy = Galaxy()
+        create_json("/DB/InGame/Galaxies.json", galaxy)
+        print(f"🌌 {galaxy.name} 은하 탄생")

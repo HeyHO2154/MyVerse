@@ -41,7 +41,7 @@ async def websocket_endpoint(websocket: WebSocket, user_id: str):
 
 #메인 로직
 async def main_loop():
-
+    
     universe = Universe()   #우주 창조
 
     while True:
@@ -49,7 +49,7 @@ async def main_loop():
         for user_id, action in action_queue:
             print(f"🛠️ {user_id}의 행동 처리: {action}")
         action_queue.clear()
-
+        
         # 2. 게임 로직
         universe.tick()
 

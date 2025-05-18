@@ -1,6 +1,7 @@
 import os
 import json
 
+#json CRUD
 def create_json(filepath, obj):
     data = read_json(filepath)
     data.append(obj.__dict__)
@@ -31,10 +32,14 @@ def delete_json(filepath, obj):
             break
     save_json(filepath, data)
 
-
+#기타 유틸
 def path(filepath):
     return os.path.join(os.path.dirname(os.path.dirname(__file__)), filepath.lstrip('/'))
 
 def save_json(filepath, data):
     with open(path(filepath), "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+
+def load_txt(filepath):
+    with open(path(filepath), "r", encoding="utf-8") as f:
+        return f.read().splitlines()
