@@ -8,9 +8,9 @@ from object.Universe import Universe
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    game_task = asyncio.create_task(game_loop())
+    main_task = asyncio.create_task(main_loop())
     yield   #서버 종료 시 작동
-    game_task.cancel()
+    main_task.cancel()
 
 app = FastAPI(lifespan=lifespan)  # lifespan 핸들러 등록
 
@@ -38,10 +38,10 @@ async def websocket_endpoint(websocket: WebSocket, user_id: str):
         connected_users.pop(user_id, None)
         print(f"🛠️ {user_id} 연결 끊김")
 
-#메인 게임
-async def game_loop():
+#메인 루프
+async def main_loop():
 
-    universe = Universe()
+    universe = Universe()   #우주 창조
     
     while True:
         # 1. 액션 큐 처리
@@ -51,31 +51,14 @@ async def game_loop():
 
         # 2. 게임 로직
         universe.tick()
-        # galaxy.galaxy()
-        # star.star()
-        # planet.planet()
 
-        # 3. 유저들에게 결과 푸시 - 추후 "변경된, 필요한" 데이터만 선택적으로 전송하게 수정
-        # galaxies = load_json(os.path.join(os.path.dirname(__file__), "InGame", "galaxies.json"))
-        # stars = load_json(os.path.join(os.path.dirname(__file__), "InGame", "stars.json"))
-        # planets = load_json(os.path.join(os.path.dirname(__file__), "InGame", "planets.json"))
-        
-        # for user_id, ws in connected_users.items():
-        #     try:
-        #         await ws.send_json({
-        #             "type": "tick_result",
-        #             "time": state.time,
-        #             "galaxies": galaxies,
-        #             "stars": stars,
-        #             "planets": planets
-        #         })
-        #     except Exception as e:
-        #         print(f"🛠️ {user_id}에게 전송 실패: {e}")
+        # 3. 유저들에게 결과 푸시 - "변경된, 필요한" 데이터만 선택적으로 전송
+        # 추후 개발
 
         # 4. 현실 시간 1초 = 1틱
         await asyncio.sleep(1) 
 
 
-#직접 실행 시 작동(import는 무시)
+#직접 실행 시 작동
 if __name__ == "__main__":
-    uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=True)   #server.py의 app(FastAPI 인스턴스) 실행, reload=True 코드 변경 시 자동 리로드
+    uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=True)

@@ -1,5 +1,5 @@
 import uuid
-from utils.data_util import read_json, create_json, update_json
+from utils.data import read_json, create_json, update_json
 
 class Universe:
     def __init__(self):

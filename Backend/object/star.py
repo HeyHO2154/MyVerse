@@ -1,4 +1,4 @@
-from utils.data_util import save_json, load_json, load_txt
+from Backend.utils.data import save_json, load_json, load_txt
 import os
 import random
 import uuid
