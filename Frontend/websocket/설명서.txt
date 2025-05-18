@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        // WebSocket 연결
+        const userId = "user123";
+        const ws = new WebSocket(`ws://localhost:8000/ws/${userId}`);
+        
+        // 연결 이벤트 처리
+        ws.onopen = () => console.log("연결됨");
+        ws.onmessage = (event) => console.log("메시지:", event.data);
+        ws.onerror = (error) => console.error("에러:", error);
+        ws.onclose = () => console.log("연결 종료");
+        
+        // 메시지 전송
+        function sendMessage() {
+            ws.send(JSON.stringify({ action: "move" }));
+        }
+    </script>
+</body>
+</html>
