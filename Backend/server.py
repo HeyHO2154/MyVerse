@@ -3,11 +3,7 @@ import uvicorn  #웹 서버(FastAPI 실행용)
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect #웹 프레임워크
 from contextlib import asynccontextmanager  #비동기 컨텍스트 관리(시작/종료 시점 관리)
 
-import os   #운영체제 관련 기능(파일 경로 처리)
-from utils.data_util import load_json
-
-from GameState import state
-from object import galaxy, star, planet
+from object import Universe, galaxy, star, planet
 
 
 @asynccontextmanager
@@ -44,6 +40,9 @@ async def websocket_endpoint(websocket: WebSocket, user_id: str):
 
 #메인 게임
 async def game_loop():
+
+    universe = Universe()
+    
     while True:
         # 1. 액션 큐 처리
         for user_id, action in action_queue:
@@ -51,10 +50,10 @@ async def game_loop():
         action_queue.clear()
 
         # 2. 게임 로직
-        state.tick()
-        galaxy.galaxy()
-        star.star()
-        planet.planet()
+        universe.tick()
+        # galaxy.galaxy()
+        # star.star()
+        # planet.planet()
 
         # 3. 유저들에게 결과 푸시 - 추후 "변경된, 필요한" 데이터만 선택적으로 전송하게 수정
         # galaxies = load_json(os.path.join(os.path.dirname(__file__), "InGame", "galaxies.json"))
