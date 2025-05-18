@@ -3,7 +3,7 @@ import uvicorn  #웹 서버(FastAPI 실행용)
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect #웹 프레임워크
 from contextlib import asynccontextmanager  #비동기 컨텍스트 관리(시작/종료 시점 관리)
 
-from object import Universe, galaxy, star, planet
+from object.Universe import Universe
 
 
 @asynccontextmanager
