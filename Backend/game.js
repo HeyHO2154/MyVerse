@@ -5,7 +5,6 @@ const { GAME_CONFIG } = require('./src/config/constants');
 const gameState = new GameState();
 
 let turn = 0;
-let isFirstLoop = true;
 
 // 메인 게임 루프 (1초마다 실행)
 console.log('🎮 MyVerse 게임 시작!');
