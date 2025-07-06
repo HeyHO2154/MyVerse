@@ -1,6 +1,6 @@
 # MyVerse
 
-나만의 가상 우주!
+나만의 가상 우주 프로젝트
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Node](https://img.shields.io/badge/node-%3E%3D14.0.0-green)
