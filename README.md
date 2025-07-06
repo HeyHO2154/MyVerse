@@ -1,6 +1,6 @@
-# 프로젝트 이름
+# MyVerse
 
-간단한 프로젝트 설명 한 줄.
+나만의 가상 우주!
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Node](https://img.shields.io/badge/node-%3E%3D14.0.0-green)
