@@ -1,4 +1,4 @@
-cd Backend:5000
+cd Backend (port:5000)
 npm init -y  # package.json 생성
 npm install ws  # WebSocket 서버용
 
@@ -11,7 +11,7 @@ node index.js
 
 ----------------------------------------
 
-cd Frontend:3000
+cd Fronten (port:3000)
 npm init -y  # package.json 생성
 npm install express  # 정적 파일 서버용
 
