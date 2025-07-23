@@ -14,7 +14,7 @@ class Nation {
 
     gameState.nations.push(this);
     this.regions.push(region);
-    console.log(`\n🏛️  ${this.race}의 ${this.name}이(가) ${region.name}에 건국되었습니다!`);
+    console.log(`🏛️  ${this.race}의 ${this.name}이(가) ${region.name}에 건국되었습니다!`);
     this.market = new Market(gameState, this);
 
   }

@@ -5,7 +5,7 @@ class Market {
     this.id = randomUUID();
     this.createdAt = gameState.year;
 
-    console.log(`\n💰 ${nation.name} 시장이 개설되었습니다!`);
+    console.log(`💰 ${nation.name} 시장이 개설되었습니다!`);
   }
 
 }

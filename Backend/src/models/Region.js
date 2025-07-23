@@ -12,7 +12,7 @@ class Region {
     this.dynasties = []; // 각 지역마다 고유한 가문들
     
     gameState.regions.push(this);
-    console.log(`\n🌍 ${this.name}이(가) 생성되었습니다!`);
+    console.log(`🌍 ${this.name}이(가) 생성되었습니다!`);
     this.nation = new Nation(gameState, this);
     
   }
