@@ -11,7 +11,7 @@ class Dynasty {
     this.persons = [];
 
     gameState.dynasties.push(this);
-    console.log(`🙋 ${region.name}에 ${this.name} 가문이 생성되었습니다!`);
+    console.log(`🙋 ${region.name}에 ${this.name} 가문이 생성되었습니다.`);
     this.persons.push(new Person(gameState, this, 0));
   }
 

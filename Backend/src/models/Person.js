@@ -19,7 +19,11 @@ class Person {
     }
     this.married = false;
 
-    console.log(`👶 ${this.dynasty.name} 가문에 ${this.name}이(가) 탄생했습니다!`);
+    if(this.generation == 1){
+      console.log(`🧑‍ ${this.dynasty.name} 가문을 ${this.name}이(가) 창설했습니다.`);
+    }else{
+      console.log(`👶 ${this.dynasty.name} 가문에 ${this.name}이(가) 태어났습니다.`);
+    }
   }
 
 }
