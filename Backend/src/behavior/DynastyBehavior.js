@@ -16,7 +16,10 @@ class DynastyBehavior {
     const market = dynasty.region.nation.market;
     dynasty.money -= dynasty.persons.length * (2 * market.prices['식량'] + dynasty.persons.length - 1) / 2;
     market.prices['식량'] += dynasty.persons.length;
-    console.log(`${dynasty.name} 가문이 식량 구매(식량: ${market.prices['식량'] - dynasty.persons.length} -> ${market.prices['식량']})[재산: ${dynasty.money}]`);
+    console.log(`${dynasty.name} 가문(${dynasty.persons.length}명) 식량 구매(식량: ${market.prices['식량'] - dynasty.persons.length} -> ${market.prices['식량']})[재산: ${dynasty.money}]`);
+  
+    // 시장에서 비싼 상품 찾아서 관련 건물 건설
+
   }
   
   static executePersonAction(person, dynasty, gameState) {
