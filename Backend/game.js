@@ -1,7 +1,6 @@
 const Region = require('./src/models/Region');
 const Dynasty = require('./src/models/Dynasty');
 const GameState = require('./src/services/GameState');
-const { GAME_CONFIG } = require('./src/config/constants');
 
 // 게임 상태 초기화
 const gameState = new GameState();
@@ -14,7 +13,7 @@ setInterval(() => {
 
   // 지역 수에 반비례한 확률로 새 지역 생성
   if(Math.random()*gameState.regions.length == 0){
-    const newRegion = new Region(gameState);
+    gameState.regions.push(new Region(gameState.regionNames));
   }
 
   

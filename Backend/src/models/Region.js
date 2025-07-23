@@ -2,10 +2,9 @@ const { randomUUID } = require('crypto');
 const Market = require('./Market');
 
 class Region {
-
-  constructor(name) {
+  constructor(names) {
     this.id = randomUUID();
-    this.name = name;
+    this.name = names[Math.floor(Math.random() * names.length)];
     this.createdAt = Date.now();
     this.market = new Market(); // 각 지역마다 고유한 시장
     this.buildings = []; // 각 지역마다 고유한 건물들
