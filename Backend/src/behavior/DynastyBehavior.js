@@ -1,3 +1,5 @@
+const Building = require('../models/Building');
+
 class DynastyBehavior {
   static processDynastyActions(gameState) {
     gameState.dynasties.forEach(dynasty => {
@@ -12,13 +14,19 @@ class DynastyBehavior {
   }
   
   static determineDynastyStrategy(dynasty, gameState) {
-    // 가문원들 수 만큼 시장에서 식량 구매 (등차수열 합 공식 사용)
     const market = dynasty.region.nation.market;
+    
+    // 가문원들 수 만큼 시장에서 식량 구매 (등차수열 합 공식 사용)
     dynasty.money -= dynasty.persons.length * (2 * market.prices['식량'] + dynasty.persons.length - 1) / 2;
     market.prices['식량'] += dynasty.persons.length;
-    console.log(`${dynasty.name} 가문(${dynasty.persons.length}명) 식량 구매(식량: ${market.prices['식량'] - dynasty.persons.length} -> ${market.prices['식량']})[재산: ${dynasty.money}]`);
-  
+    console.log(`🌾 ${dynasty.name} 가문(${dynasty.persons.length}명) 식량 구매(식량: ${market.prices['식량'] - dynasty.persons.length} -> ${market.prices['식량']})[재산: ${dynasty.money}]`);
+
     // 시장에서 비싼 상품 찾아서 관련 건물 건설
+    const maxPrice = Math.max(...Object.values(market.prices));
+    const maxPriceItem = Object.keys(market.prices).find(key => market.prices[key] === maxPrice);
+    if(maxPriceItem && dynasty.region.buildings.length < dynasty.region.size){
+      new Building(gameState, dynasty, maxPriceItem);
+    }
 
   }
   

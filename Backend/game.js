@@ -2,6 +2,7 @@ const GameState = require('./src/services/GameState');
 const Region = require('./src/models/Region');
 const Dynasty = require('./src/models/Dynasty');
 const DynastyBehavior = require('./src/behavior/DynastyBehavior');
+const RegionBehavior = require('./src/behavior/RegionBehavior');
 
 // 게임 상태 초기화
 const gameState = new GameState();
@@ -19,6 +20,7 @@ setInterval(() => {
   // 지역 순회하며 가문 생성
   gameState.regions.forEach(region => {
     //임시 코드, 끝나면 조건문 삭제
+    console.log(region.nation.market.prices);
     if(gameState.dynasties.length < 4){
       region.dynasties.push(new Dynasty(gameState, region));
     }
@@ -26,5 +28,8 @@ setInterval(() => {
 
   // 가문 순회하며 행동 시행
   DynastyBehavior.processDynastyActions(gameState);
+
+  // 지역 순회하며 행동 시행
+  RegionBehavior.processRegionActions(gameState);
   
 }, 1000);
