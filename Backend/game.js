@@ -18,4 +18,4 @@ setInterval(() => {
   }
 
   
-}, GAME_CONFIG.LOOP_INTERVAL);
+}, 1000);
