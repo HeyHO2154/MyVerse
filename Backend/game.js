@@ -1,6 +1,7 @@
 const GameState = require('./src/services/GameState');
 const Region = require('./src/models/Region');
 const Dynasty = require('./src/models/Dynasty');
+const DynastyBehavior = require('./src/behavior/DynastyBehavior');
 
 // 게임 상태 초기화
 const gameState = new GameState();
@@ -24,11 +25,6 @@ setInterval(() => {
   });
 
   // 가문 순회하며 행동 시행
-  gameState.dynasties.forEach(dynasty => {
-    // 가문원 순회하며 행동 시행
-    dynasty.persons.forEach(person => {
-      // 행동 시행
-    });
-  });
+  DynastyBehavior.processDynastyActions(gameState);
   
 }, 1000);

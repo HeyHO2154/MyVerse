@@ -7,13 +7,12 @@ class Region {
     this.name = gameState.regionNames[Math.floor(Math.random() * gameState.regionNames.length)];
     this.createdAt = gameState.year;
 
-    this.nation = null;
+    this.nation = new Nation(gameState, this);
     this.buildings = []; // 각 지역마다 고유한 건물들
     this.dynasties = []; // 각 지역마다 고유한 가문들
     
     gameState.regions.push(this);
     console.log(`🌍 ${this.name}이(가) 생성되었습니다.`);
-    this.nation = new Nation(gameState, this);
     
   }
 
