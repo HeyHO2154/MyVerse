@@ -1,6 +1,7 @@
 const DynastyConsume = require('./DynastyConsume');
 const DynastyGetWork = require('./DynastyGetWork');
 const DynastyWedding = require('./DynastyWedding');
+const Person = require('../models/Person');
 
 class DynastyBehavior {
   static processDynastyActions(gameState) {
@@ -48,6 +49,14 @@ class DynastyBehavior {
       }
     } else {
       // 유년기 
+    }
+
+    // 출산
+    if(person.married === true && person.gender === 'female' && age >= 20 && age < 40){
+      // 출산 확률: 나이, 자녀 수에 반비례
+      if(Math.floor(Math.random()*age*(person.child+1)) == 0){
+        person.dynasty.persons.add(new Person(gameState, person.dynasty, person.generation+1, ++person.child));
+      }
     }
     
     

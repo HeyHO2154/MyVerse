@@ -18,10 +18,8 @@ class DynastyWedding {
             return; // 구혼할 상대가 없음
         }
 
-        // 랜덤하게 한 명 선택
+        // 무작위 선택 후 결혼
         const bride = availableBrides[Math.floor(Math.random() * availableBrides.length)];
-
-        // 결혼 처리
         this.processMarriage(groom, bride, gameState);
     }
 
