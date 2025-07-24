@@ -37,8 +37,11 @@ class DynastyBehavior {
     const age = gameState.year - person.createdAt;
     if(age >= 60){
       if(Math.floor(Math.random()*(Math.max(2, 80-age))) == 0){ 
-        person.died = true;
-        console.log(`💀 ${person.name}이(가) 죽었습니다.`);
+        console.log(`💀 ${person.dynasty.name} 가문의 ${person.name}이(가) ${age}세의 나이로 자연사하였습니다.`);
+        person.dynasty.persons.delete(person);
+        if(person.dynasty.persons.size == 0){
+          gameState.dynasties.delete(person.dynasty);
+        }
       }
     } else if (age >= 40){
       // 중년기

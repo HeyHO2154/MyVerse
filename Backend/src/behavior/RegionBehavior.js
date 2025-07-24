@@ -24,7 +24,19 @@ class RegionBehavior {
 
   static executeBuildingAction(gameState, building, region) {
     // 작업장 생산
-    RegionProduce.BuildingProduce(gameState, building, region);
+    if(gameState.dynasties.has(building.dynasty)){
+      RegionProduce.BuildingProduce(gameState, building, region);
+    } else {
+      // 건물 노동자 순회하면서 해고처리
+      for (const worker of building.workers) {
+        if(gameState.dynasties.has(worker)){
+          worker.employed = false;
+          console.log(`💤 ${building.dynasty.name} 가문의 ${building.item} 건물 소유권이 제거되어 노동자 ${worker.name}이(가) 해고되었습니다.`);
+        }
+      }
+      region.buildings.delete(building);
+    }
+    
   }
 }
 
