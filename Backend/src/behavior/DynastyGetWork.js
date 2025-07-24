@@ -15,7 +15,7 @@ class DynastyGetWork {
     const recruitingBuildings = Array.from(dynasty.region.buildings).filter(building => building.recruit === true);
     
     if (recruitingBuildings.length === 0) {
-      // console.log(`💤 ${dynasty.name} 가문이 구직할 일자리가 없습니다.`);
+      console.log(`💤 ${dynasty.name} 가문이 구직할 일자리가 없습니다.`);
       return;
     }
     

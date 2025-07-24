@@ -18,7 +18,9 @@ class RegionBehavior {
     //코드 작성 예정..(재판, 선거 등)
 
     // 지역 내 가문 생성
-    region.dynasties.add(new Dynasty(gameState, region));
+    if(Math.floor(Math.random()*region.dynasties.size) == 0){
+      region.dynasties.add(new Dynasty(gameState, region));
+    }
 
   }
 
