@@ -7,7 +7,8 @@ class Nation {
     this.name = gameState.nationNames[Math.floor(Math.random() * gameState.nationNames.length)];
     this.createdAt = gameState.year;
 
-    this.regions = [region];
+    this.regions = new Set();
+    this.regions.add(region);
     this.market = new Market(gameState, this);
     this.race = gameState.raceNames[Math.floor(Math.random() * gameState.raceNames.length)];
     this.religion = null;

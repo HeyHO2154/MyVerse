@@ -7,9 +7,9 @@ class DynastyConsume {
   }
   
   static consumeItem(dynasty, market, item) {
-    dynasty.money -= dynasty.persons.length * (2 * market.prices[item] + dynasty.persons.length - 1) / 2;
-    market.prices[item] += dynasty.persons.length;
-    console.log(`💰 ${dynasty.name} 가문(${dynasty.persons.length}명) ${item} 구매(${item}: ${market.prices[item] - dynasty.persons.length} -> ${market.prices[item]})[재산: ${dynasty.money}]`);
+    dynasty.money -= dynasty.persons.size * (2 * market.prices[item] + dynasty.persons.size - 1) / 2;
+    market.prices[item] += dynasty.persons.size;
+    console.log(`💰 ${dynasty.name} 가문(${dynasty.persons.size}명) ${item} 구매(${item}: ${market.prices[item] - dynasty.persons.size} -> ${market.prices[item]})[재산: ${dynasty.money}]`);
   }
   
   static consumeService(dynasty, gameState) {

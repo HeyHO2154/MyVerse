@@ -6,6 +6,8 @@ class Building {
     this.createdAt = gameState.year;
     this.dynasty = dynasty;
     this.item = item;
+
+    this.recruit = true;
     this.workers = new Set();
     this.wage = 1;
     
