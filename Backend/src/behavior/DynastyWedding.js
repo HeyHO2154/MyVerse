@@ -8,8 +8,8 @@ class DynastyWedding {
             if (otherDynasty === groom.dynasty) return; // 자기 가문 제외
             
             otherDynasty.persons.forEach(otherPerson => {
-            if (otherPerson.married === false && otherPerson.gender === 'female') {
-                availableBrides.push({ person: otherPerson, dynasty: otherDynasty });
+            if (otherPerson.married === false && otherPerson.gender === 'female' && gameState.year - otherPerson.createdAt >= 20 && gameState.year - otherPerson.createdAt < 40) {
+                availableBrides.push(otherPerson);
             }
             });
         });
@@ -19,8 +19,7 @@ class DynastyWedding {
         }
 
         // 랜덤하게 한 명 선택
-        const selectedBride = availableBrides[Math.floor(Math.random() * availableBrides.length)];
-        const bride = selectedBride.person;
+        const bride = availableBrides[Math.floor(Math.random() * availableBrides.length)];
 
         // 결혼 처리
         this.processMarriage(groom, bride, gameState);

@@ -7,7 +7,7 @@ class MarketTrade {
     market.prices[item] += count;
 
     dynasty.money -= price;
-    // console.log(`💰 ${dynasty.name} 가문(${dynasty.persons.size}명) ${item} 구매(${item}: ${market.prices[item] - count} -> ${market.prices[item]})[재산: ${dynasty.money}]`);
+    console.log(`💰 ${dynasty.name} 가문(${dynasty.persons.size}명) ${item} 구매(${item}: ${market.prices[item] - count} -> ${market.prices[item]})[재산: ${dynasty.money}]`);
     return price;
   }
   
@@ -19,7 +19,7 @@ class MarketTrade {
     market.prices[item] = Math.max(1, market.prices[item] - count);
     
     dynasty.money += price;
-    // console.log(`💰 ${dynasty.name} 가문(${dynasty.persons.size}명) ${item} 판매(${item}: ${firstPrice} -> ${market.prices[item]})[재산: ${dynasty.money}]`);
+    console.log(`💰 ${dynasty.name} 가문(${dynasty.persons.size}명) ${item} 판매(${item}: ${firstPrice} -> ${market.prices[item]})[재산: ${dynasty.money}]`);
     return price;
   }
   

@@ -18,10 +18,10 @@ setInterval(() => {
   }
 
 
-  // 가문 순회하며 행동 시행
-  DynastyBehavior.processDynastyActions(gameState);
-
   // 지역 순회하며 행동 시행
   RegionBehavior.processRegionActions(gameState);
+
+  // 가문 순회하며 행동 시행
+  DynastyBehavior.processDynastyActions(gameState);
   
 }, 1000);

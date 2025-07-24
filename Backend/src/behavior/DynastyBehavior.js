@@ -31,10 +31,26 @@ class DynastyBehavior {
   }
   
   static executePersonAction(person, dynasty, gameState) {
-    // 구혼하기 - 미혼 남성이면서 가문에 돈이 있을 때
-    if(person.married === false && dynasty.money > 10 && person.gender === 'male'){
-      DynastyWedding.proposeMarriage(person, gameState);
+
+    // 나이에 따른 행동
+    const age = gameState.year - person.createdAt;
+    if(age >= 60){
+      if(Math.floor(Math.random()*(Math.max(2, 80-age))) == 0){ 
+        person.died = true;
+        console.log(`💀 ${person.name}이(가) 죽었습니다.`);
+      }
+    } else if (age >= 40){
+      // 중년기
+    } else if (age >= 20){
+      // 구혼하기 - 미혼 남성이면서 가문에 돈이 있을 때
+      if(person.married === false && dynasty.money > 10 && person.gender === 'male'){
+        DynastyWedding.proposeMarriage(person, gameState);
+      }
+    } else {
+      // 유년기 
     }
+    
+    
   }
 
 
