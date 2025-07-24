@@ -1,5 +1,6 @@
 const DynastyConsume = require('./DynastyConsume');
 const DynastyGetWork = require('./DynastyGetWork');
+const DynastyWedding = require('./DynastyWedding');
 
 class DynastyBehavior {
   static processDynastyActions(gameState) {
@@ -30,12 +31,13 @@ class DynastyBehavior {
   }
   
   static executePersonAction(person, dynasty, gameState) {
-    // 구혼하기
-    if(person.married == false && dynasty.money > 10){
-      //코드 작성 예정
-      //같은 지역 내 미혼, 전재산의 10%를 주어야하므로 적자인 경우 구혼 안함
+    // 구혼하기 - 미혼 남성이면서 가문에 돈이 있을 때
+    if(person.married === false && dynasty.money > 10 && person.gender === 'male'){
+      DynastyWedding.proposeMarriage(person, gameState);
     }
   }
+
+
 }
 
 module.exports = DynastyBehavior;

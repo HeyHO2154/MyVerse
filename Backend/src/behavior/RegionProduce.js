@@ -6,7 +6,7 @@ class RegionProduce {
     const dynasty = building.dynasty;
     const market = region.nation.market;
     
-    // 생산 작업
+    // 생산
     for (const worker of building.workers) {
       GameState.dynasties.has(worker) ? worker.money += building.wage : building.workers.delete(worker); //생명주기 확인용
     }
@@ -14,6 +14,7 @@ class RegionProduce {
     dynasty.money -= totalWage;
     const buildingUpkeep = MarketTrade.BuyItem(dynasty, market, '석재', dynasty.skill); 
     console.log(`🛠️  ${dynasty.name} 가문 ${building.item} 생산 ${building.workers.size*dynasty.skill}개(지출: 임금 ${totalWage}, 건물 ${buildingUpkeep})[재산: ${dynasty.money}]`);
+    // 판매
     const income = MarketTrade.SellItem(dynasty, market, building.item, building.workers.size * dynasty.skill);
     const profit = income - totalWage - buildingUpkeep;
     
