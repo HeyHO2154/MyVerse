@@ -8,7 +8,7 @@ class Dynasty {
     this.createdAt = gameState.year;
 
     this.region = region;
-    this.persons = [new Person(gameState, this, 0)];
+    this.persons = [new Person(gameState, this, 1, 1)];
 
     this.money = 0;
 

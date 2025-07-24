@@ -20,7 +20,6 @@ setInterval(() => {
   // 지역 순회하며 가문 생성
   gameState.regions.forEach(region => {
     //임시 코드, 끝나면 조건문 삭제
-    console.log(region.nation.market.prices);
     if(gameState.dynasties.length < 3){
       region.dynasties.push(new Dynasty(gameState, region));
     }

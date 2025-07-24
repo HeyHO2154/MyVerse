@@ -26,7 +26,7 @@ class RegionBehavior {
     dynasty.money += S;
     market.prices[building.item] = Math.max(1, k - n);
     
-    console.log(`🛠️ ${dynasty.name} 가문 ${building.item} 생산(${n}개, 수익: ${S})`);
+    console.log(`🛠️  ${dynasty.name} 가문 ${building.item} 생산(${n}개, 수익: ${S})`);
   }
 }
 
