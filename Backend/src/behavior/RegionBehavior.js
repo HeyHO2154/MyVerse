@@ -6,7 +6,7 @@ class RegionBehavior {
       
       // 지역 내 건물들의 행동 실행
       region.buildings.forEach(building => {
-        //this.executeBuildingAction(building, region, gameState);
+        this.executeBuildingAction(building, region);
       });
     });
   }
@@ -15,15 +15,18 @@ class RegionBehavior {
     //코드 작성 예정..(재판, 선거 등)
   }
 
-  static executeBuildingAction(building, region, gameState) {
+  static executeBuildingAction(building, region) {
     // 건물 작업 임시코드
     const dynasty = building.dynasty;
     const market = region.nation.market;
-    const produce = 4 //임시 생산량
-    dynasty.money += produce * (2 * market.prices[building.item] + produce - 1) / 2; //<- 이거 3 2 1 1 1 이런 경우도 있어서 코드 재정비 필요
-    market.prices[building.item] = Math.max(1, market.prices[building.item] - produce);
-    console.log(`🛠️ `);
-
+    const n = 4; //임시 생산량
+    const k = market.prices[building.item];
+    const S = k > n ? n*(k+(k-n+1))/2 : k*(k+1)/2+(n-k); // 등차수열(최소값이 1일 때와 아닐 때를 구분)
+    
+    dynasty.money += S;
+    market.prices[building.item] = Math.max(1, k - n);
+    
+    console.log(`🛠️ ${dynasty.name} 가문 ${building.item} 생산(${n}개, 수익: ${S})`);
   }
 }
 
