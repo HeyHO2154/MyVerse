@@ -21,7 +21,7 @@ setInterval(() => {
   gameState.regions.forEach(region => {
     //임시 코드, 끝나면 조건문 삭제
     console.log(region.nation.market.prices);
-    if(gameState.dynasties.length < 4){
+    if(gameState.dynasties.length < 3){
       region.dynasties.push(new Dynasty(gameState, region));
     }
   });

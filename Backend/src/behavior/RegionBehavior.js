@@ -6,7 +6,7 @@ class RegionBehavior {
       
       // 지역 내 건물들의 행동 실행
       region.buildings.forEach(building => {
-        this.executeBuildingAction(building, region, gameState);
+        //this.executeBuildingAction(building, region, gameState);
       });
     });
   }
@@ -20,7 +20,7 @@ class RegionBehavior {
     const dynasty = building.dynasty;
     const market = region.nation.market;
     const produce = 4 //임시 생산량
-    dynasty.money += produce * (2 * market.prices[building.item] + produce - 1) / 2;
+    dynasty.money += produce * (2 * market.prices[building.item] + produce - 1) / 2; //<- 이거 3 2 1 1 1 이런 경우도 있어서 코드 재정비 필요
     market.prices[building.item] = Math.max(1, market.prices[building.item] - produce);
     console.log(`🛠️ `);
 
