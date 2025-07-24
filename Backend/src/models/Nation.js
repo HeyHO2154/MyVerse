@@ -12,7 +12,7 @@ class Nation {
     this.race = gameState.raceNames[Math.floor(Math.random() * gameState.raceNames.length)];
     this.religion = null;
 
-    gameState.nations.push(this);
+    gameState.nations.add(this);
     console.log(`🏛️  ${this.race}의 ${this.name}이(가) ${region.name}에 건국되었습니다.`);
 
   }

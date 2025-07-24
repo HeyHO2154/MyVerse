@@ -12,7 +12,7 @@ class Dynasty {
 
     this.money = 0;
 
-    gameState.dynasties.push(this);
+    gameState.dynasties.add(this);
     console.log(`🙋 ${region.name}에 ${this.name} 가문이 생성되었습니다.`);
   }
 

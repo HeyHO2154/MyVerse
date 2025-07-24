@@ -12,7 +12,7 @@ class Region {
     this.buildings = []; // 각 지역마다 고유한 건물들
     this.dynasties = []; // 각 지역마다 고유한 가문들
     
-    gameState.regions.push(this);
+    gameState.regions.add(this);
     console.log(`🌍 ${this.name}이(가) 생성되었습니다.`);
     
   }
