@@ -17,12 +17,6 @@ setInterval(() => {
     new Region(gameState);
   }
 
-  // 지역 순회하며 가문 생성
-  gameState.regions.forEach(region => {
-    if(gameState.dynasties.size < 3){
-      region.dynasties.add(new Dynasty(gameState, region));
-    }
-  });
 
   // 가문 순회하며 행동 시행
   DynastyBehavior.processDynastyActions(gameState);

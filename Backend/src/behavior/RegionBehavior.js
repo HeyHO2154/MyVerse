@@ -1,4 +1,5 @@
 const RegionProduce = require('./RegionProduce');
+const Dynasty = require('../models/Dynasty');
 
 class RegionBehavior {
   static processRegionActions(gameState) {
@@ -15,6 +16,10 @@ class RegionBehavior {
   
   static determineRegionStrategy(region, gameState) {
     //코드 작성 예정..(재판, 선거 등)
+
+    // 지역 내 가문 생성
+    region.dynasties.add(new Dynasty(gameState, region));
+
   }
 
   static executeBuildingAction(gameState, building, region) {

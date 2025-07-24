@@ -17,7 +17,7 @@ class DynastyBehavior {
   static determineDynastyStrategy(dynasty, gameState) {
     const market = dynasty.region.nation.market;
     
-    // 가문원들 수 만큼 시장에서 식량 구매 (등차수열 합 공식 사용)
+    // 가문원들 식량 구매
     DynastyConsume.consume(dynasty, market);
 
     // 토지가 남는 다면 건물 건설, 이외 구직 활동

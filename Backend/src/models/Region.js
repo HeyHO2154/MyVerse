@@ -8,7 +8,7 @@ class Region {
     this.createdAt = gameState.year;
 
     this.nation = new Nation(gameState, this);
-    this.size = 1;
+    this.size = 4;
     this.buildings = new Set(); // 각 지역마다 고유한 건물들
     this.dynasties = new Set(); // 각 지역마다 고유한 가문들
     
