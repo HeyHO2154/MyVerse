@@ -2,8 +2,8 @@ class DynastyConsume {
 
   static consume(dynasty, market) {
     this.consumeItem(dynasty, market, '식량');
-    if(dynasty.money > 0) this.consumeItem(dynasty, market, '옷'); else ;// 준비중
-    if(dynasty.money > 0) this.consumeItem(dynasty, market, '술'); else ;// 준비중
+    // if(dynasty.money > 0) this.consumeItem(dynasty, market, '옷'); else ;// 준비중
+    // if(dynasty.money > 0) this.consumeItem(dynasty, market, '술'); else ;// 준비중
   }
   
   static consumeItem(dynasty, market, item) {

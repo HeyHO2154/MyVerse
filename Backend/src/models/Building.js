@@ -6,8 +6,10 @@ class Building {
     this.createdAt = gameState.year;
     this.dynasty = dynasty;
     this.item = item;
+    this.workers = new Set();
+    this.wage = 1;
     
-    dynasty.region.buildings.push(this);
+    dynasty.region.buildings.add(this);
     console.log(`🛠️  ${dynasty.name} 가문의 ${this.item} 건물이 생성되었습니다.`);
     
   }

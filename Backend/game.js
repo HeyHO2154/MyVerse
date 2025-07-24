@@ -20,7 +20,7 @@ setInterval(() => {
   // 지역 순회하며 가문 생성
   gameState.regions.forEach(region => {
     if(gameState.dynasties.size < 3){
-      region.dynasties.push(new Dynasty(gameState, region));
+      region.dynasties.add(new Dynasty(gameState, region));
     }
   });
 

@@ -21,7 +21,7 @@ class DynastyBehavior {
     DynastyConsume.consume(dynasty, market);
 
     // 토지가 남는 다면 건물 건설, 이외 구직 활동
-    dynasty.region.buildings.length < dynasty.region.size ? DynastyGetWork.getLand(gameState, dynasty, market) : DynastyGetWork.getJob(dynasty, market);
+    dynasty.region.buildings.size < dynasty.region.size ? DynastyGetWork.getLand(gameState, dynasty, market) : DynastyGetWork.getJob(dynasty, market);
     
     
   }
