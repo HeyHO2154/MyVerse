@@ -1,31 +1,26 @@
-const { randomUUID } = require('crypto');
-
 class Market {
-  constructor(gameState, nation) {
-    this.id = randomUUID();
-    this.createdAt = gameState.year;
-    
-    // 아이템별 가격을 객체로 관리 (시작가, 하한가, 상한가)
+  constructor(nation) {
+    // 아이템별 가격
     this.prices = {
-      '교육': { current: 250, min: 201, max: 299 },
-      '기도': { current: 250, min: 201, max: 299 },
-      '치료': { current: 250, min: 201, max: 299 },
-      '도박': { current: 250, min: 201, max: 299 },
+      '교육': 1,
+      '기도': 1,
+      '치료': 1,
+      '도박': 1,
 
-      '군수품': { current: 150, min: 101, max: 199 },
-      '술': { current: 150, min: 101, max: 199 },
-      '옷': { current: 150, min: 101, max: 199 },
-      '종이': { current: 150, min: 101, max: 199 },
+      '군수품': 1,
+      '술': 1,
+      '옷': 1,
+      '종이': 1,
 
-      '석재': { current: 50, min: 1, max: 99 },
-      '철': { current: 50, min: 1, max: 99 },
-      '석탄': { current: 50, min: 1, max: 99 },
-      '금': { current: 1, min: 1, max: 1 }, //거래 불가
+      '석재': 1,
+      '철': 1,
+      '석탄': 1,
+      '금': 1, //거래 불가
 
-      '식량': { current: 50, min: 1, max: 99 },
-      '과일': { current: 50, min: 1, max: 99 },
-      '양모': { current: 50, min: 1, max: 99 },
-      '목재': { current: 50, min: 1, max: 99 }
+      '식량': 1,
+      '과일': 1,
+      '양모': 1,
+      '목재': 1
     };
 
     console.log(`💰 ${nation.name} 시장이 개설되었습니다.`);
