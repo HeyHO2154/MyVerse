@@ -3,6 +3,7 @@ const Region = require('./src/models/Region');
 const Dynasty = require('./src/models/Dynasty');
 const DynastyBehavior = require('./src/behavior/DynastyBehavior');
 const RegionBehavior = require('./src/behavior/RegionBehavior');
+const NationBehavior = require('./src/behavior/NationBehavior');
 
 // 게임 상태 초기화
 const gameState = new GameState();
@@ -17,6 +18,8 @@ setInterval(() => {
     new Region(gameState);
   }
 
+  // // 국가 순회하며 행동 시행
+  // NationBehavior.processNationActions(gameState);
 
   // // 지역 순회하며 행동 시행
   // RegionBehavior.processRegionActions(gameState);
