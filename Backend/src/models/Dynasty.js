@@ -1,15 +1,13 @@
-const { randomUUID } = require('crypto');
 const Person = require('./Person');
 
 class Dynasty {
   constructor(gameState, region) {
-    this.id = randomUUID();
     this.name = gameState.dynastyNames[Math.floor(Math.random() * gameState.dynastyNames.length)];
     this.createdAt = gameState.year;
 
     this.region = region;
     this.persons = new Set();
-    this.persons.add(new Person(gameState, this, 1, 1));
+    this.persons.add(new Person(gameState, this));
 
     this.money = 0;
 
